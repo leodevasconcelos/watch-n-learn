@@ -2,10 +2,10 @@
 
 namespace Learn\Http\Controllers\Auth;
 
-use Learn\Http\Controllers\Controller;
-use Learn\User;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
+use Learn\Http\Controllers\Controller;
+use Learn\User;
 use Validator;
 
 class AuthController extends Controller
