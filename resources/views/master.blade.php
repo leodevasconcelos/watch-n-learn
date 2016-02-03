@@ -5,8 +5,8 @@
   <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.css">
 </head>
 <body ng-app="BlankApp" ng-cloak>
-     <md-toolbar layout-padding>
-        <h2>
+     <md-toolbar>
+        <h2 layout-margin>
           <span style='font-weight: 100'>Watch n Learn</span>
         </h2>
      </md-toolbar>
