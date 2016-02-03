@@ -1,8 +1,8 @@
 <html lang="en" >
 <head>
   <!-- Angular Material style sheet -->
-  <link rel='stylesheet' href='http://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
-  <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.css">
+  <link rel='stylesheet' href='https://fonts.googleapis.com/css?family=Roboto:400,500,700,400italic'>
+  <link rel="stylesheet" href="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.css">
 </head>
 <body ng-app="BlankApp" ng-cloak>
      <md-toolbar>
@@ -12,13 +12,13 @@
      </md-toolbar>
 
   <!-- Angular Material requires Angular.js Libraries -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
-  <script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-animate.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-aria.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.8/angular-messages.min.js"></script>
 
   <!-- Angular Material Library -->
-  <script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.js"></script>
+  <script src="https://ajax.googleapis.com/ajax/libs/angular_material/1.0.4/angular-material.min.js"></script>
 
   <!-- Your application bootstrap  -->
   <script type="text/javascript">
