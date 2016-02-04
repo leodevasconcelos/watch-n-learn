@@ -11,7 +11,11 @@ nav .brand-logo {
 
 .learn-nav {
   font-weight: 100;
-  padding: 0 10 10 10; }
+  padding: 0 10px 10px 10px; }
+
+.center {
+  margin: 0 auto;
+  width: 30%; }
 
 p {
   line-height: 2rem; }
