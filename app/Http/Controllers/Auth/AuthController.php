@@ -7,6 +7,7 @@ use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Learn\Http\Controllers\Controller;
 use Learn\User;
 use Validator;
+use Socialite;
 
 class AuthController extends Controller
 {
@@ -73,4 +74,35 @@ class AuthController extends Controller
             'password' => bcrypt($data['password']),
         ]);
     }
+
+    /**
+     * Redirect the user to the provider authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    /**
+     * Obtain the user information from provider.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback($provider)
+    {
+        try {
+            $user = Socialite::driver($provider)->user();
+        } catch (Exception $e) {
+            return redirect('auth/'.$provider);
+        }
+
+        $authUser = $this->findOrCreateUser($user, $provider);
+
+        Auth::loginUsingId($authUser->id, true);
+
+        return redirect($this->redirectTo);
+    }
+
 }
