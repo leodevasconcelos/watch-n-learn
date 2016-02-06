@@ -16,7 +16,7 @@
             @else
                 <li>
                     <a class="dropdown-button" data-activates="authdropdown" href="#!">
-                        {{ Auth::user()->username }}
+                        {{ Auth::user()->name }}
                         <i class="material-icons right">arrow_drop_down</i>
                     </a>
                 </li>
