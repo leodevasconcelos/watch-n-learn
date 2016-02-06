@@ -2,13 +2,13 @@
 
 namespace Learn\Http\Controllers\Auth;
 
+use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Learn\Http\Controllers\Controller;
 use Learn\User;
-use Validator;
 use Socialite;
-use Auth;
+use Validator;
 
 class AuthController extends Controller
 {
@@ -122,12 +122,12 @@ class AuthController extends Controller
         }
 
         return User::create([
-            'name' => $user->name,
+            'name'     => $user->name,
             'username' => $user->nickname,
-            'email' => $user->email,
+            'email'    => $user->email,
             'provider' => $provider,
-            'uid' => $user->id,
-            'avatar' => $user->avatar,
+            'uid'      => $user->id,
+            'avatar'   => $user->avatar,
         ]);
     }
 }
