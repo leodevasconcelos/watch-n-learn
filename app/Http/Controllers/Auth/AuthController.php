@@ -2,10 +2,12 @@
 
 namespace Learn\Http\Controllers\Auth;
 
+use Auth;
 use Illuminate\Foundation\Auth\AuthenticatesAndRegistersUsers;
 use Illuminate\Foundation\Auth\ThrottlesLogins;
 use Learn\Http\Controllers\Controller;
 use Learn\User;
+use Socialite;
 use Validator;
 
 class AuthController extends Controller
@@ -28,7 +30,7 @@ class AuthController extends Controller
      *
      * @var string
      */
-    protected $redirectTo = '/home';
+    protected $redirectTo = '/';
 
     /**
      * Create a new authentication controller instance.
@@ -51,6 +53,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name'     => 'required|max:255',
+            'username' => 'max:255|unique:users',
             'email'    => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -67,8 +70,64 @@ class AuthController extends Controller
     {
         return User::create([
             'name'     => $data['name'],
+            'username' => $data['username'],
             'email'    => $data['email'],
             'password' => bcrypt($data['password']),
+        ]);
+    }
+
+    /**
+     * Redirect the user to the provider authentication page.
+     *
+     * @return Response
+     */
+    public function redirectToProvider($provider)
+    {
+        return Socialite::driver($provider)->redirect();
+    }
+
+    /**
+     * Obtain the user information from provider.
+     *
+     * @return Response
+     */
+    public function handleProviderCallback($provider)
+    {
+        try {
+            $user = Socialite::driver($provider)->user();
+        } catch (Exception $e) {
+            return redirect('auth/'.$provider);
+        }
+
+        $authUser = $this->findOrCreateUser($user, $provider);
+
+        Auth::login($authUser, true);
+
+        //return view('index');
+        return redirect($this->redirectTo);
+    }
+
+    public function findOrCreateUser($user, $provider)
+    {
+        $authUser = User::where('uid', $user->id)->first();
+
+        if ($authUser) {
+            return $authUser;
+        }
+
+        $authUser = User::where('email', $user->email)->first();
+
+        if ($authUser) {
+            return $authUser;
+        }
+
+        return User::create([
+            'name'     => $user->name,
+            'username' => $user->nickname,
+            'email'    => $user->email,
+            'provider' => $provider,
+            'uid'      => $user->id,
+            'avatar'   => $user->avatar,
         ]);
     }
 }

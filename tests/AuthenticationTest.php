@@ -1,14 +1,14 @@
 <?php
 
 
-class UserTest extends TestCase
+class AuthenticationTest extends TestCase
 {
     /**
      * A basic test example.
      *
      * @return void
      */
-    public function testExample()
+    public function testRegisteringUser()
     {
         $this->assertTrue(true);
     }

@@ -1,6 +1,10 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
 
 $grey: #f4f4f4;
+$facebook-blue: #3B5998;
+$twitter-blue: #4099FF;
+$github-black: #000000;
+$google-red: #d62d20;
 
 /* Custom Stylesheet */
 /**
@@ -17,7 +21,28 @@ nav .brand-logo {
 
 .learn-nav {
     font-weight: 100;
-    padding: 0 10 10 10
+    padding: 0 10px 10px 10px;
+}
+
+.center{
+    margin: 0 auto;
+    width: 30%;
+}
+
+.facebook-blue {
+    color: $facebook-blue;
+}
+
+.twitter-blue {
+    color: $twitter-blue;
+}
+
+.github-black {
+    color: $github-black;
+}
+
+.google-red {
+    color: $google-red;
 }
 
 p {

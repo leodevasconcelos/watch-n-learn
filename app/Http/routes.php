@@ -11,10 +11,6 @@
 |
 */
 
-Route::get('/', function () {
-    return view('master');
-});
-
 /*
 |--------------------------------------------------------------------------
 | Application Routes
@@ -26,6 +22,12 @@ Route::get('/', function () {
 |
 */
 
-Route::group(['middleware' => ['web']], function () {
-    //
+Route::group(['middleware' => 'web'], function () {
+    Route::auth();
+
+    Route::get('/', 'HomeController@index');
+
+    // OAuth Routes
+    Route::get('auth/{provider}', 'Auth\AuthController@redirectToProvider');
+    Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 });
