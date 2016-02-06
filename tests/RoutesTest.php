@@ -3,7 +3,7 @@
 class RoutesTest extends TestCase
 {
     /**
-     * A basic test example.
+     * Test landing page route.
      *
      * @return void
      */
@@ -11,5 +11,11 @@ class RoutesTest extends TestCase
     {
         $this->visit('/')
             ->see('Watch n Learn');
+    }
+
+    public function testRegisterRoute()
+    {
+        $this->visit('/register')
+            ->see('Register');
     }
 }
