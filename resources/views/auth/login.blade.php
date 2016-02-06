@@ -24,6 +24,8 @@
                     </button>
                     <a href="{{ url('/password/reset') }}">&nbsp;&nbsp;Forgot Your Password?</a>
                 </div>
+                <div class="row">Or login with</div>
+                @include('partials.oauth')
             </form>
         </div>
     </div>

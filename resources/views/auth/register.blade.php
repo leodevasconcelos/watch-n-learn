@@ -42,6 +42,8 @@
                     </button>
                     <a href="{{ url('/login') }}">&nbsp;&nbsp;Already have an account? Login</a>
                 </div>
+                <div class="row">Or register with</div>
+                @include('partials.oauth')
             </form>
         </div>
     </div>
