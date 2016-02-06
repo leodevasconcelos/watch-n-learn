@@ -8,6 +8,7 @@ use Learn\Http\Controllers\Controller;
 use Learn\User;
 use Validator;
 use Socialite;
+use Auth;
 
 class AuthController extends Controller
 {
@@ -52,7 +53,7 @@ class AuthController extends Controller
     {
         return Validator::make($data, [
             'name'     => 'required|max:255',
-            'username' => 'required|max:255|unique:users',
+            'username' => 'max:255|unique:users',
             'email'    => 'required|email|max:255|unique:users',
             'password' => 'required|confirmed|min:6',
         ]);
@@ -100,9 +101,33 @@ class AuthController extends Controller
 
         $authUser = $this->findOrCreateUser($user, $provider);
 
-        Auth::loginUsingId($authUser->id, true);
+        Auth::login($authUser, true);
 
+        //return view('index');
         return redirect($this->redirectTo);
     }
 
+    public function findOrCreateUser($user, $provider)
+    {
+        $authUser = User::where('uid', $user->id)->first();
+
+        if ($authUser) {
+            return $authUser;
+        }
+
+        $authUser = User::where('email', $user->email)->first();
+
+        if ($authUser) {
+            return $authUser;
+        }
+
+        return User::create([
+            'name' => $user->name,
+            'username' => $user->nickname,
+            'email' => $user->email,
+            'provider' => $provider,
+            'uid' => $user->id,
+            'avatar' => $user->avatar,
+        ]);
+    }
 }
