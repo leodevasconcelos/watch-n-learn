@@ -30,28 +30,31 @@
       <div id="settings" class="col s12">
         <div class="tab-content">
           <h3 class="flow-text">Update Your Profile</h3>
-          <form class="col s12">
+          @include('partials.validation')
+          <form class="col s12" method="POST" action="{{ url('profile/update') }}">
+            {{ method_field('PUT') }}
+            {!! csrf_field() !!}
             <div class="row">
               <div class="input-field col s12">
-                <input id="full_name" type="text" class="validate" value = "{{ $user->name }}" required>
+                <input name="name" type="text" class="validate" value = "{{ $user->name }}" required>
                 <label for="first_name">Full Name</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="username" type="text" class="validate" value="{{ $user->username }}">
+                <input name="username" type="text" class="validate" value="{{ $user->username }}">
                 <label for="username">Username</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <input id="email" type="email" class="validate" value="{{ $user->email }}" required>
+                <input name="email" type="email" class="validate" value="{{ $user->email }}" required>
                 <label for="email">Email</label>
               </div>
             </div>
             <div class="row">
               <div class="input-field col s12">
-                <textarea id="bio" class="materialize-textarea">{{$user->bio}}</textarea>
+                <textarea name="bio" class="materialize-textarea">{{$user->bio}}</textarea>
                 <label for="bio">Bio</label>
               </div>
             </div>
