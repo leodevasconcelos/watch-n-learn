@@ -2,7 +2,37 @@
 
 namespace Learn\Http\Controllers;
 
+use Auth;
+use Learn\Http\Requests;
+use Illuminate\Http\Request;
+
 class ProfileController extends Controller
 {
-    //
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
+    public function index()
+    {
+        $user = Auth::user();
+        return view('profile.index', compact('user'));
+    }
+
+    public function update(Request $request)
+    {
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'username' => 'unique:users,username,'.Auth::user()->id,
+            'email'    => 'required|unique:users,email,'.Auth::user()->id,
+            'bio' => 'max:140',
+        ]);
+
+        Auth::user()->update($request->all());
+        return redirect('profile');
+    }
+
+    public function destroy()
+    {
+    }
 }
