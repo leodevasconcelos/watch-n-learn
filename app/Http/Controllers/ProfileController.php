@@ -16,7 +16,9 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
-        return view('profile.index', compact('user'));
+        $projects = $user->projects()->get();
+
+        return view('profile.index', compact('user', 'projects'));
     }
 
     public function update(Request $request)
