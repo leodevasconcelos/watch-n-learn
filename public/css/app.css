@@ -16,8 +16,9 @@ nav .brand-logo {
 .content {
   margin-top: 30px; }
 
-.prof-image {
-  border-radius: 100px; }
+.profile-image {
+  max-width: 250px;
+  max-height: 250px; }
 
 .username {
   font-size: 2em; }
@@ -28,9 +29,15 @@ nav .brand-logo {
 .bio {
   font-size: 1em; }
 
+.tab-content {
+  margin-top: 30px; }
+
 .center {
   margin: 0 auto;
   width: 30%; }
+
+.mirg {
+  margin-left: 5px; }
 
 .facebook-blue {
   color: #3B5998; }
