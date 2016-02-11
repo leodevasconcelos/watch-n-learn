@@ -33,4 +33,6 @@ Route::group(['middleware' => 'web'], function () {
 
     // Profile Routes
     Route::get('profile', 'ProfileController@index');
+
+    Route::put('profile/update', 'ProfileController@update');
 });
