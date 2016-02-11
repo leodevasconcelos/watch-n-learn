@@ -19,24 +19,17 @@ class ProfileController extends Controller
         return view('profile.index', compact('user'));
     }
 
-    public function create()
+    public function update(Request $request)
     {
-    }
+        $this->validate($request, [
+            'name' => 'required|max:255',
+            'username' => 'unique:users,username,'.Auth::user()->id,
+            'email'    => 'required|unique:users,email,'.Auth::user()->id,
+            'bio' => 'max:140',
+        ]);
 
-    public function store()
-    {
-    }
-
-    public function show()
-    {
-    }
-
-    public function edit()
-    {
-    }
-
-    public function update()
-    {
+        Auth::user()->update($request->all());
+        return redirect('profile');
     }
 
     public function destroy()
