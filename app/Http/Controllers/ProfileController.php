@@ -2,11 +2,21 @@
 
 namespace Learn\Http\Controllers;
 
+use Auth;
+use Learn\Http\Requests;
+use Illuminate\Http\Request;
+
 class ProfileController extends Controller
 {
+    public function __construct()
+    {
+        $this->middleware('auth');
+    }
+
     public function index()
     {
-        return view('profile.index');
+        $user = Auth::user();
+        return view('profile.index', compact('user'));
     }
 
     public function create()
