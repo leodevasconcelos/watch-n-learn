@@ -3,7 +3,6 @@
 namespace Learn\Http\Controllers;
 
 use Auth;
-use Learn\Http\Requests;
 use Illuminate\Http\Request;
 
 class ProfileController extends Controller
@@ -24,13 +23,14 @@ class ProfileController extends Controller
     public function update(Request $request)
     {
         $this->validate($request, [
-            'name' => 'required|max:255',
+            'name'     => 'required|max:255',
             'username' => 'unique:users,username,'.Auth::user()->id,
             'email'    => 'required|unique:users,email,'.Auth::user()->id,
-            'bio' => 'max:140',
+            'bio'      => 'max:140',
         ]);
 
         Auth::user()->update($request->all());
+
         return redirect('profile');
     }
 
