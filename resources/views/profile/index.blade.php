@@ -20,12 +20,23 @@
     <div class="col s9 row">
       <div class="col s12">
         <ul class="tabs">
-          <li class="tab col s3"><a href="#projects">Projects</a></li>
-          <li class="tab col s3"><a href="#upload" class="active">Upload New Project</a></li>
+          <li class="tab col s3"><a href="#projects" class="active">Projects</a></li>
+          <li class="tab col s3"><a href="#upload">Upload New Project</a></li>
           <li class="tab col s3"><a href="#settings">Profile Settings</a></li>
         </ul>
       </div>
-      <div id="projects" class="col s12">Projects</div>
+      <div id="projects" class="col s12">
+          <div class="tab-content">
+            <h3 class="flow-text">Your Projects</h3>
+            <div class="row">
+                @foreach($projects as $project)
+                <div class="col s4 project">
+                    <iframe width="300" height="169" src="https://www.youtube.com/embed/{{ $project->url }}" frameborder="0" allowfullscreen></iframe>
+                </div>
+            @endforeach
+            </div>
+          </div>
+      </div>
       <div id="upload" class="col s12">
         <div class="tab-content">
             <h3 class="flow-text">Upload a Learning resource</h3>
