@@ -20,7 +20,12 @@ class ProjectController extends Controller
             'url' => 'required',
         ]);
 
+        $url = explode('=', $request->input('url'));
+        $url = end($url);
+
+        $request['url'] = $url;
         $request['user_id'] = Auth::user()->id;
+
         Project::create($request->all());
 
         return redirect('profile');
