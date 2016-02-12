@@ -2,22 +2,19 @@
 
 namespace Learn\Http\Controllers;
 
-use Illuminate\Http\Request;
-
 use Auth;
+use Illuminate\Http\Request;
 use Learn\Project;
-use Learn\Http\Requests;
-use Learn\Http\Controllers\Controller;
 
 class ProjectController extends Controller
 {
     public function save(Request $request)
     {
         $this->validate($request, [
-            'title' => 'required|max:255',
+            'title'       => 'required|max:255',
             'description' => 'required|max:255',
             'category'    => 'required',
-            'url' => 'required',
+            'url'         => 'required',
         ]);
 
         $url = explode('=', $request->input('url'));
