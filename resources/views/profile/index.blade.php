@@ -30,8 +30,11 @@
             <h3 class="flow-text">Your Projects</h3>
             <div class="row">
                 @foreach($projects as $project)
-                <div class="col s4 project">
-                    <iframe width="300" height="169" src="https://www.youtube.com/embed/{{ $project->url }}" frameborder="0" allowfullscreen></iframe>
+                <div class="col s4">
+                    <div class="project">
+                        <iframe width="250" height="141" src="https://www.youtube.com/embed/{{ $project->url }}" frameborder="0" allowfullscreen></iframe>
+                        <h6 class="flow-text"><a href="#"> {{$project->title}} </a></h6>
+                    </div>
                 </div>
             @endforeach
             </div>
