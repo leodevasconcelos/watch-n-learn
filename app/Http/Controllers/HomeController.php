@@ -2,6 +2,8 @@
 
 namespace Learn\Http\Controllers;
 
+use Learn\Project;
+
 class HomeController extends Controller
 {
     /**
@@ -11,6 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('index');
+        $projects = Project::all();
+        return view('index', compact('projects'));
     }
 }
