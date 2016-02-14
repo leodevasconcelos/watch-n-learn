@@ -8,6 +8,14 @@ use Learn\Project;
 
 class ProjectController extends Controller
 {
+
+    public function show($id)
+    {
+        $project = Project::find($id);
+
+        return view('project.show', compact('project'));
+    }
+
     public function save(Request $request)
     {
         $this->validate($request, [
