@@ -13,8 +13,9 @@ class ProjectController extends Controller
     public function show($id)
     {
         $project = Project::find($id);
+        $comments = $project->comments()->get();
 
-        return view('project.show', compact('project'));
+        return view('project.show', compact('project', 'comments'));
     }
 
     public function save(Request $request)
