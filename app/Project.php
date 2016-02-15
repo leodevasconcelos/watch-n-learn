@@ -19,4 +19,9 @@ class Project extends Model
     {
         return $this->hasMany('Learn\Comment');
     }
+
+    public function likes()
+    {
+        return $this->hasMany('Learn\Like');
+    }
 }
