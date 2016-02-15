@@ -14,4 +14,9 @@ class Project extends Model
     protected $fillable = [
         'title', 'category', 'url', 'description', 'user_id',
     ];
+
+    public function comments()
+    {
+        return $this->hasMany('Learn\Comment');
+    }
 }
