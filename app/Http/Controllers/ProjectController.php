@@ -8,7 +8,6 @@ use Learn\Project;
 
 class ProjectController extends Controller
 {
-
     public function show($id)
     {
         $project = Project::find($id);
