@@ -3,6 +3,7 @@
 namespace Learn\Http\Controllers;
 
 use Auth;
+use Learn\Comment;
 use Illuminate\Http\Request;
 use Learn\Project;
 
@@ -34,5 +35,20 @@ class ProjectController extends Controller
         Project::create($request->all());
 
         return redirect('profile');
+    }
+
+    public function comment(Request $request)
+    {
+        $comment = new Comment;
+        $comment->comment = $request->input('comment');
+        $comment->user_id = Auth::user()->id;
+        $comment->project_id = $request->input('project_id');
+        $comment->save();
+
+        $name = Auth::user()->name;
+        $comment = $request->input('comment');
+
+        return compact('name', 'comment');
+        ;
     }
 }
