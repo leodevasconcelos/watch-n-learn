@@ -36,5 +36,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::put('profile/update', 'ProfileController@update');
 
     // Project Routes
+    Route::get('projects/{id}', 'ProjectController@show');
+
     Route::post('projects', 'ProjectController@save');
 });

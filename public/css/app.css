@@ -42,6 +42,12 @@ nav .brand-logo {
 .project {
   padding: 30px 2px; }
 
+.theatre {
+  background-color: #000000;
+  height: 60vh;
+  width: 100vw;
+  margin-top: -10px; }
+
 .facebook-blue {
   color: #3B5998; }
 
