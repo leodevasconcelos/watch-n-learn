@@ -15,16 +15,12 @@
             </div>
             <div class="comments">
                 <h2 class="flow-text">Comment below</h2>
-                <div class="comment-view z-depth-1">
-                    <h5>Ganga Christopher</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere fugit dicta quod nobis alias magnam ex nihil unde nostrum aliquam pariatur reprehenderit similique quasi ipsum, voluptatum quae quas eos commodi!</p>
-                </div>
-                <div class="comment-view z-depth-1">
-                    <h5>Ganga Christopher</h5>
-                    <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Facere fugit dicta quod nobis alias magnam ex nihil unde nostrum aliquam pariatur reprehenderit similique quasi ipsum, voluptatum quae quas eos commodi!</p>
+                <div class="comments-list">
+
                 </div>
                 <div class="input-field col s12 comment">
-                    <textarea name="description" class="materialize-textarea">{{ old('description') }}</textarea>
+                    <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
+                    <textarea id="comment" data-id="{{ $project->id }}" class="materialize-textarea">{{ old('description') }}</textarea>
                     <label for="description">Add your comment</label>
                 </div>
             </div>
