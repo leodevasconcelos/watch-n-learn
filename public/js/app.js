@@ -25,4 +25,19 @@ $(document).ready(function () {
       })
     }
   })
+  $('#like').click(function (e) {
+    e.preventDefault()
+    var data = {
+      project_id: $('#comment').attr('data-id'),
+      _token: $('#_token').val()
+    }
+
+    $.post('/projects/like', data, function (res) {
+      if (res == 'success') {
+        var likes = $('#likeCount').html()
+        var num = Number(likes) + 1
+        $('#likeCount').html(num)
+      }
+    })
+  })
 })
