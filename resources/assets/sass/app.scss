@@ -63,9 +63,23 @@ nav .brand-logo {
 
 .theatre {
     background-color: $github-black;
-    height: 60vh;
+    height: 480px;
     width: 100vw;
     margin-top: -10px;
+}
+
+.player {
+    display: table;
+    margin: 0 auto;
+}
+
+.comment-view {
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment {
+    margin-top: 20px;
 }
 
 .facebook-blue {

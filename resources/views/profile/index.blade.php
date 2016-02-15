@@ -33,7 +33,7 @@
                 <div class="col s4">
                     <div class="project">
                         <iframe width="250" height="141" src="https://www.youtube.com/embed/{{ $project->url }}" frameborder="0" allowfullscreen></iframe>
-                        <h6 class="flow-text"><a href="#"> {{$project->title}} </a></h6>
+                        <h6 class="flow-text"><a href="{{ url('projects/'.$project->id) }}"> {{$project->title}} </a></h6>
                     </div>
                 </div>
             @endforeach
