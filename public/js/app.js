@@ -19,6 +19,9 @@ $(document).ready(function () {
         html += '</div>'
 
         $('.comments-list').append(html)
+        var comments = $('#commentCount').html()
+        var comments = Number(comments) + 1
+        $('#commentCount').html(comments)
       })
     }
   })
