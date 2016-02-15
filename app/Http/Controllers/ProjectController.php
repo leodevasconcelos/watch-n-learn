@@ -3,6 +3,7 @@
 namespace Learn\Http\Controllers;
 
 use Auth;
+use Learn\Like;
 use Learn\Comment;
 use Illuminate\Http\Request;
 use Learn\Project;
@@ -50,6 +51,15 @@ class ProjectController extends Controller
         $comment = $request->input('comment');
 
         return compact('name', 'comment');
-        ;
+    }
+
+    public function like(Request $request)
+    {
+        $like = new Like;
+        $like->user_id = Auth::user()->id;
+        $like->project_id = $request->input('project_id');
+        $like->save();
+
+        return 'success';
     }
 }
