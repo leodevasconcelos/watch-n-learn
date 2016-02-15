@@ -15,8 +15,9 @@ class ProjectController extends Controller
     {
         $project = Project::find($id);
         $comments = $project->comments()->get();
+        $likes = $project->likes()->count();
 
-        return view('project.show', compact('project', 'comments'));
+        return view('project.show', compact('project', 'comments', 'likes'));
     }
 
     public function save(Request $request)
