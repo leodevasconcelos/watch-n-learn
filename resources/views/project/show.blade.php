@@ -10,7 +10,7 @@
                 <div class="col s10">
                     <h1 class="flow-text">{{ $project->title }}</h1>
                 </div>
-                <h1 class="flow-text col s1"><span id="likeCount">{{ $likes }}</span>  <a href="#" id="like"><i class="small material-icons">thumb_up</i></a></h1>
+                <h1 class="flow-text col s1"><span id="favoritesCount">{{ $favoritess }}</span>  <a href="#" id="favorites"><i class="small material-icons">thumb_up</i></a></h1>
                 <h1 class="flow-text col s1"><span id="commentCount">{{ count($comments) }} </span><i class="small material-icons">chat_bubble_outline</i></h1>
             </div>
             <div class="comments">
