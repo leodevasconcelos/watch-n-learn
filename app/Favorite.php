@@ -4,7 +4,7 @@ namespace Learn;
 
 use Illuminate\Database\Eloquent\Model;
 
-class Like extends Model
+class Favorite extends Model
 {
     public function user()
     {
