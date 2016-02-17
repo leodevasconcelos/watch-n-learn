@@ -1,12 +1,11 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ProfileTest extends TestCase
 {
     use DatabaseMigrations;
+
     /**
      * A basic test example.
      *
