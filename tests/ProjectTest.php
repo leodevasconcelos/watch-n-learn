@@ -7,8 +7,9 @@ use Illuminate\Foundation\Testing\DatabaseTransactions;
 class ProjectTest extends TestCase
 {
     use DatabaseMigrations;
+
     /**
-     * A basic test example.
+     * Test creation of a project
      *
      * @return void
      */
