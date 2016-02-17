@@ -1,15 +1,13 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class ProjectTest extends TestCase
 {
     use DatabaseMigrations;
 
     /**
-     * Test creation of a project
+     * Test creation of a project.
      *
      * @return void
      */

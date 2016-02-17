@@ -1,12 +1,11 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class RoutesTest extends TestCase
 {
     use DatabaseMigrations;
+
     /**
      * Test landing page route.
      *

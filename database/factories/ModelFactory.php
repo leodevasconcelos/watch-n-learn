@@ -26,7 +26,7 @@ $factory->define(Learn\Project::class, function (Faker\Generator $faker) {
         'title'       => $faker->city,
         'youtubeID'   => $faker->randomElement(['yxeKGzW-BFs', '7TF00hJI78Y', 'gqOEoUR5RHg', 'fju9ii8YsGs', 'gqOEoUR5RHg']),
         'user_id'     => $faker->numberBetween(1, 20),
-        'category'    => "Programming",
+        'category'    => 'Programming',
         'description' => $faker->sentence(40),
     ];
 });

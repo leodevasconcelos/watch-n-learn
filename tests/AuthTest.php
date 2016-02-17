@@ -1,15 +1,13 @@
 <?php
 
-use Illuminate\Foundation\Testing\WithoutMiddleware;
 use Illuminate\Foundation\Testing\DatabaseMigrations;
-use Illuminate\Foundation\Testing\DatabaseTransactions;
 
 class AuthTest extends TestCase
 {
     use DatabaseMigrations;
 
     /**
-     * Test Regisering a new user
+     * Test Regisering a new user.
      *
      * @return void
      */
@@ -28,7 +26,7 @@ class AuthTest extends TestCase
     }
 
     /**
-     * Test Login a new user
+     * Test Login a new user.
      */
     public function testLoginUser()
     {
