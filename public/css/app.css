@@ -59,6 +59,11 @@ nav .brand-logo {
 .comment {
   margin-top: 20px; }
 
+footer {
+  width: 100vw;
+  position: absolute;
+  bottom: 0; }
+
 .facebook-blue {
   color: #3B5998; }
 
