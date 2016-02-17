@@ -8,6 +8,13 @@
         <filter>
             <whitelist>
                 <directory suffix=".php">app/</directory>
+                <exclude>
+                    <directory>app/Jobs/</directory>
+                    <directory>app/Http/Requests/</directory>
+                    <directory>app/Console/</directory>
+                    <directory>app/Events/</directory>
+                    <directory>app/Exceptions/</directory>
+                </exclude>
             </whitelist>
         </filter>
         <logging>

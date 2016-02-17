@@ -37,7 +37,7 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Register
+                    <button class="btn waves-effect waves-light" type="submit" name="register">Register
                         <i class="material-icons right">send</i>
                     </button>
                     <a href="{{ url('/login') }}">&nbsp;&nbsp;Already have an account? Login</a>
