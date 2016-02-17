@@ -36,7 +36,7 @@ class ProjectController extends Controller
 
         Project::create($request->all());
 
-        return redirect('profile');
+        return redirect('dashboard');
     }
 
     public function comment(Request $request)

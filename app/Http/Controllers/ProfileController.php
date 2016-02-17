@@ -31,7 +31,7 @@ class ProfileController extends Controller
 
         Auth::user()->update($request->all());
 
-        return redirect('profile');
+        return redirect('dashboard');
     }
 
     public function destroy()

@@ -32,8 +32,8 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
     // Profile Routes
-    Route::get('profile', 'ProfileController@index');
-    Route::put('profile/update', 'ProfileController@update');
+    Route::get('dashboard', 'ProfileController@index');
+    Route::put('dashboard/update', 'ProfileController@update');
 
     // Project Routes
     Route::get('projects/{id}', 'ProjectController@show');
