@@ -29,4 +29,10 @@ class RoutesTest extends TestCase
         $this->visit('/login')
             ->see('Login');
     }
+
+    public function testDashboardRouteWithoutLogin()
+    {
+        $this->visit('/dashboard')
+            ->seePageIs('/login');
+    }
 }
