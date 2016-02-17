@@ -62,4 +62,13 @@ class ProjectController extends Controller
 
         return 'success';
     }
+
+    public function edit($id)
+    {
+        $user = Auth::user();
+        $project = Project::find($id);
+        $projects = $user->projects()->get();
+
+        return view('project.edit', compact('user', 'project', 'projects'));
+    }
 }

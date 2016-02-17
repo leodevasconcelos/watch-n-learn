@@ -1,7 +1,7 @@
 <ul id="authdropdown" class="dropdown-content">
     <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
     <li class="divider"></li>
-    <li><a href="#">Settings</a></li>
+    <li><a href="{{ url('/settings') }}">Settings</a></li>
     <li class="divider"></li>
     <li><a href="{{ url('/logout') }}">Logout</a></li>
 </ul>

@@ -34,9 +34,11 @@ Route::group(['middleware' => 'web'], function () {
     // Profile Routes
     Route::get('dashboard', 'ProfileController@index');
     Route::put('dashboard/update', 'ProfileController@update');
+    Route::get('settings', 'ProfileController@edit');
 
     // Project Routes
     Route::get('projects/{id}', 'ProjectController@show');
+    Route::get('projects/{id}/edit', 'ProjectController@edit');
 
     Route::post('projects', 'ProjectController@save');
     Route::post('projects/comment', 'ProjectController@comment');
