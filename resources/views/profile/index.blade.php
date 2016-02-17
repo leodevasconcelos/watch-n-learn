@@ -116,7 +116,7 @@
             </div>
             <div class="row"><!--
               <button class="waves-effect waves-light btn col s2 offset-s8"><i class="material-icons left">cancel</i>Cancel</a> -->
-              <button type="submit" class="waves-effect waves-light btn col s2 offset-s10"><i class="material-icons left">save</i>Save</a>
+              <button type="submit" class="waves-effect waves-light btn col s2 offset-s10">Save</a>
             </div>
           </form>
         </div>
