@@ -14,9 +14,9 @@ class ProjectController extends Controller
     {
         $project = Project::find($id);
         $comments = $project->comments()->get();
-        $likes = $project->likes()->count();
+        $favorites = $project->favorites()->count();
 
-        return view('project.show', compact('project', 'comments', 'likes'));
+        return view('project.show', compact('project', 'comments', 'favorites'));
     }
 
     public function save(Request $request)
@@ -53,12 +53,12 @@ class ProjectController extends Controller
         return compact('name', 'comment');
     }
 
-    public function like(Request $request)
+    public function favorite(Request $request)
     {
-        $like = new Like();
-        $like->user_id = Auth::user()->id;
-        $like->project_id = $request->input('project_id');
-        $like->save();
+        $favorite = new Favorite();
+        $favorite->user_id = Auth::user()->id;
+        $favorite->project_id = $request->input('project_id');
+        $favorite->save();
 
         return 'success';
     }
