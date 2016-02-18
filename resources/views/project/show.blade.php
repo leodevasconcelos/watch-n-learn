@@ -8,7 +8,7 @@
             </div>
             <div class="row">
                 <div class="col s10">
-                    <h1 class="flow-text"><blockquote>{{ $project->title }}</blockquote></h1>
+                    <h1 class="flow-text"><blockquote>{{ $project->title }} <small>by <a href="{{ url('/profile/'.$project->user->id) }}">{{ $project->user->name }}</a></small></blockquote> </h1>
                     <p>{{ $project->description }}</p>
                     <blockquote>{{ $project->category}}</blockquote></h1>
                 </div>

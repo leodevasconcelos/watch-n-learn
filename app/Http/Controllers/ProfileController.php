@@ -4,6 +4,7 @@ namespace Learn\Http\Controllers;
 
 use Auth;
 use Illuminate\Http\Request;
+use Learn\User;
 
 class ProfileController extends Controller
 {
@@ -42,5 +43,14 @@ class ProfileController extends Controller
         $favorites = $user->favoriteProjects();
 
         return view('profile.settings', compact('user', 'projects', 'favorites'));
+    }
+
+    public function show($id)
+    {
+        $user = User::find($id);
+        $projects = $user->projects()->get();
+        $favorites = $user->favoriteProjects();
+
+        return view('profile.user', compact('user', 'projects', 'favorites'));
     }
 }

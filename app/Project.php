@@ -16,6 +16,11 @@ class Project extends Model
         'title', 'category', 'url', 'description', 'user_id',
     ];
 
+    public function user()
+    {
+        return $this->belongsTo('Learn\User');
+    }
+
     public function comments()
     {
         return $this->hasMany('Learn\Comment');
