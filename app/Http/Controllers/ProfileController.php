@@ -3,8 +3,8 @@
 namespace Learn\Http\Controllers;
 
 use Auth;
-use Learn\User;
 use Illuminate\Http\Request;
+use Learn\User;
 
 class ProfileController extends Controller
 {
