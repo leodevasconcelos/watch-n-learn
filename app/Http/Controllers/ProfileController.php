@@ -16,8 +16,9 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         $projects = $user->projects()->get();
+        $favorites = $user->favoriteProjects();
 
-        return view('profile.index', compact('user', 'projects'));
+        return view('profile.index', compact('user', 'projects', 'favorites'));
     }
 
     public function update(Request $request)
@@ -38,7 +39,8 @@ class ProfileController extends Controller
     {
         $user = Auth::user();
         $projects = $user->projects()->get();
+        $favorites = $user->favoriteProjects();
 
-        return view('profile.settings', compact('user', 'projects'));
+        return view('profile.settings', compact('user', 'projects', 'favorites'));
     }
 }

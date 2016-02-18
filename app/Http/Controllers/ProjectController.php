@@ -3,8 +3,10 @@
 namespace Learn\Http\Controllers;
 
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 use Learn\Comment;
+use Learn\Favorite;
 use Learn\Project;
 
 class ProjectController extends Controller
@@ -54,12 +56,31 @@ class ProjectController extends Controller
 
     public function favorite(Request $request)
     {
-        $favorite = new Favorite();
-        $favorite->user_id = Auth::user()->id;
-        $favorite->project_id = $request->input('project_id');
-        $favorite->save();
+        if (Auth::check()) {
+            $favorite = new Favorite();
+            $favorite->user_id = Auth::user()->id;
+            $favorite->project_id = $request->input('project_id');
+            $favorite->save();
 
-        return 'success';
+            $favorites = Project::find($request->input('project_id'))->favorites()->count();
+
+            return $favorites;
+        }
+
+        return response('Unauthorized', 401);
+    }
+
+    public function unfavorite(Request $request)
+    {
+        if (Auth::check()) {
+            DB::delete('DELETE FROM favorites WHERE project_id = ? AND user_id = ?', [$request->input('project_id'), Auth::user()->id]);
+
+            $favorites = Project::find($request->input('project_id'))->favorites()->count();
+
+            return $favorites;
+        }
+
+        return response('Unauthorized', 401);
     }
 
     public function edit($id)
@@ -67,7 +88,8 @@ class ProjectController extends Controller
         $user = Auth::user();
         $project = Project::find($id);
         $projects = $user->projects()->get();
+        $favorites = $user->favoriteProjects();
 
-        return view('project.edit', compact('user', 'project', 'projects'));
+        return view('project.edit', compact('user', 'project', 'projects', 'favorites'));
     }
 }

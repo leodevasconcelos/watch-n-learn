@@ -2,6 +2,7 @@
 
 namespace Learn;
 
+use Auth;
 use Illuminate\Database\Eloquent\Model;
 
 class Project extends Model
@@ -23,5 +24,15 @@ class Project extends Model
     public function favorites()
     {
         return $this->hasMany('Learn\Favorite');
+    }
+
+    public function checkFavorite()
+    {
+        $user = $this->favorites()->where('user_id', Auth::user()->id)->first();
+        if ($user) {
+            return true;
+        }
+
+        return false;
     }
 }

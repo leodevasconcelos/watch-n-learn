@@ -25,6 +25,7 @@ $(document).ready(function () {
       })
     }
   })
+
   $('#favorite').click(function (e) {
     e.preventDefault()
     var data = {
@@ -32,12 +33,16 @@ $(document).ready(function () {
       _token: $('#_token').val()
     }
 
-    $.post('/projects/favorite', data, function (res) {
-      if (res == 'success') {
-        var favorites = $('#favoriteCount').html()
-        var num = Number(favorites) + 1
-        $('#favoriteCount').html(num)
-      }
+    var state = $('#favorite').attr('class')
+    var url = state == 'unfav' ? 'favorite' : 'unfavorite'
+
+    $.post('/projects/' + url, data, function (res) {
+        $('#favoriteCount').html(res);
+
+        if (state == 'fav')
+            $('#favorite').removeClass('fav').addClass('unfav')
+        else
+            $('#favorite').removeClass('unfav').addClass('fav')
     })
   })
 })
