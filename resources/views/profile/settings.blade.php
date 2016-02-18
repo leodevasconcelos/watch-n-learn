@@ -11,7 +11,7 @@
           <li class="tab col s3"><a href="#settings" class="active">Profile Settings</a></li>
         </ul>
       </div>
-      @include('profile.tabcontent');
+      @include('profile.tabcontent')
     </div>
   </div>
 @stop
