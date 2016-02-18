@@ -88,7 +88,8 @@ class ProjectController extends Controller
         $user = Auth::user();
         $project = Project::find($id);
         $projects = $user->projects()->get();
+        $favorites = $user->favoriteProjects();
 
-        return view('project.edit', compact('user', 'project', 'projects'));
+        return view('project.edit', compact('user', 'project', 'projects', 'favorites'));
     }
 }
