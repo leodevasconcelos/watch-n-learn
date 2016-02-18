@@ -5,7 +5,6 @@ namespace Learn\Http\Controllers;
 use Auth;
 use Illuminate\Http\Request;
 use Learn\Comment;
-use Learn\Like;
 use Learn\Project;
 
 class ProjectController extends Controller
