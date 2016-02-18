@@ -29,7 +29,6 @@ class User extends Authenticatable
         return $this->hasMany('Learn\Project');
     }
 
-
     public function favorites()
     {
         return $this->hasMany('Learn\Favorite');
