@@ -3,9 +3,9 @@
 <div id="upload" class="col s12">
     <div class="tab-content">
         <h3 class="flow-text">Upload a Learning resource</h3>
+        @include('partials.validation')
         <form class="col s12" method="POST" action="{{ url('projects') }}">
             {!! csrf_field() !!}
-            @include('partials.validation')
             <div class="row">
                 <div class="input-field col s12">
                     <input name="title" type="text" class="validate" value="{{ old('title') }}">

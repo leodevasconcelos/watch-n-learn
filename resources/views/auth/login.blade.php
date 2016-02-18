@@ -3,6 +3,7 @@
 @section('content')
     <div class="center">
         <h2>Login</h2>
+        @include('partials.validation')
         <div class="row">
             <form class="col s12" role="form" method="POST" action="{{ url('/login') }}">
                 {!! csrf_field() !!}
