@@ -6,6 +6,7 @@ use Auth;
 use Illuminate\Http\Request;
 use Learn\Comment;
 use Learn\Project;
+use Learn\Favorite;
 
 class ProjectController extends Controller
 {
@@ -54,12 +55,18 @@ class ProjectController extends Controller
 
     public function favorite(Request $request)
     {
-        $favorite = new Favorite();
-        $favorite->user_id = Auth::user()->id;
-        $favorite->project_id = $request->input('project_id');
-        $favorite->save();
+        if (Auth::check()) {
+            $favorite = new Favorite();
+            $favorite->user_id = Auth::user()->id;
+            $favorite->project_id = $request->input('project_id');
+            $favorite->save();
 
-        return 'success';
+            $favorites = Project::find($request->input('project_id'))->favorites()->count();
+
+            return $favorites;
+        }
+
+        return response('Unauthorized', 401);
     }
 
     public function edit($id)
