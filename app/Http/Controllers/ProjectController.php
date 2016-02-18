@@ -110,4 +110,10 @@ class ProjectController extends Controller
 
         return redirect('/projects/'.$id);
     }
+
+    public function delete($id)
+    {
+        Project::destroy($id);
+        return redirect('/dashboard');
+    }
 }
