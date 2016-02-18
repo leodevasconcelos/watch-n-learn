@@ -12,10 +12,9 @@
                     <p>{{ $project->description }}</p>
                     <blockquote>{{ $project->category}}</blockquote></h1>
                 </div>
-                <h1 class="flow-text col s1"><span id="favoritesCount">{{ $favorites }}</span>  <a href="#" id="favorite"><i class="small material-icons">grade</i></a></h1>
+                <h1 class="flow-text col s1"><span id="favoriteCount">{{ $favorites }}</span>  <a href="#" id="favorite" class="{{ $project->checkFavorite() ? 'fav' : 'unfav' }}" ><i class="small material-icons">grade</i></a></h1>
                 <h1 class="flow-text col s1"><span id="commentCount">{{ count($comments) }} </span><i class="small material-icons">chat_bubble_outline</i></h1>
             </div>
-
             <div class="comments">
                 <h2 class="flow-text">Comment below</h2>
                 <div class="comments-list">
