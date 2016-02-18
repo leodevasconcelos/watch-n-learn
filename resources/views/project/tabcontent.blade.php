@@ -3,7 +3,8 @@
 <div id="upload" class="col s12">
     <div class="tab-content">
         <h3 class="flow-text">Edit:  {{ $project->title }}</h3>
-        <form class="col s12" method="POST" action="{{ url('/projects/'.$project->id.'/update/') }}">
+        <form class="col s12" method="POST" action="{{ url('/projects/'.$project->id) }}">
+            {{ method_field('PUT') }}
             {!! csrf_field() !!}
             @include('partials.validation')
             <div class="row">
@@ -37,7 +38,10 @@
             </div>
             <div class="row">
                 <button style="margin-right:10px;" type="submit" name="Upload" class="waves-effect waves-light btn col s2 offset-s7">Save</a>
-                <button class="waves-effect waves-light btn col s2">Delete</a>
+                <form action="{{ url('projects/'.$project->id) }}" class="col s2">
+                    {{ method_field('DELETE') }}
+                    <button type="submit" class="waves-effect waves-light btn">Delete</a>
+                </form>
             </div>
         </form>
     </div>

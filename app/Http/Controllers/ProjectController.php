@@ -87,9 +87,35 @@ class ProjectController extends Controller
     {
         $user = Auth::user();
         $project = Project::find($id);
-        $projects = $user->projects()->get();
-        $favorites = $user->favoriteProjects();
 
-        return view('project.edit', compact('user', 'project', 'projects', 'favorites'));
+        if ($user->id == $project->user->id) {
+            $projects = $user->projects()->get();
+            $favorites = $user->favoriteProjects();
+
+            return view('project.edit', compact('user', 'project', 'projects', 'favorites'));
+        }
+
+        return redirect('/projects/'.$id);
+    }
+
+    public function update(Request $request, $id)
+    {
+        $this->validate($request, [
+            'title'       => 'required|max:255',
+            'description' => 'required|max:255',
+            'category'    => 'required',
+            'url'         => 'required',
+        ]);
+
+        $project = Project::find($id)->update($request->all());
+
+        return redirect('/projects/'.$id);
+    }
+
+    public function delete($id)
+    {
+        Project::destroy($id);
+
+        return redirect('/dashboard');
     }
 }

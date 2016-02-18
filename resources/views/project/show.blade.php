@@ -7,13 +7,16 @@
                 <iframe width="853" height="480" src="https://www.youtube.com/embed/{{ $project->url }}" frameborder="0" allowfullscreen></iframe>
             </div>
             <div class="row">
-                <div class="col s10">
+                <div class="col s9">
                     <h1 class="flow-text"><blockquote>{{ $project->title }} <small>by <a href="{{ url('/profile/'.$project->user->id) }}">{{ $project->user->name }}</a></small></blockquote> </h1>
                     <p>{{ $project->description }}</p>
                     <blockquote>{{ $project->category}}</blockquote></h1>
                 </div>
                 <h1 class="flow-text col s1"><span id="favoriteCount">{{ $favorites }}</span>  <a href="#" id="favorite" class="{{ $project->checkFavorite() ? 'fav' : 'unfav' }}" ><i class="small material-icons">grade</i></a></h1>
-                <h1 class="flow-text col s1"><span id="commentCount">{{ count($comments) }} </span><i class="small material-icons">chat_bubble_outline</i></h1>
+                <h1 class="flow-text col s1"><span id="commentCount">{{ count($comments) }} </span><i class="small material-icons">comment</i></h1>
+                @if ($project->user->id == Auth::user()->id)
+                    <h1 class="flow-text col s1"><a class="btn" href="{{ url('/projects/'.$project->id.'/edit') }}">EDIT</a></h1>
+                @endif
             </div>
             <div class="comments">
                 <h2 class="flow-text">Comment below</h2>
