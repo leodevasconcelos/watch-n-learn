@@ -43,6 +43,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('projects/{id}/edit', 'ProjectController@edit');
 
     Route::post('projects', 'ProjectController@save');
+    Route::put('projects/{id}', 'ProjectController@update');
     Route::post('projects/comment', 'ProjectController@comment');
     Route::post('projects/favorite', 'ProjectController@favorite');
     Route::post('projects/unfavorite', 'ProjectController@unfavorite');
