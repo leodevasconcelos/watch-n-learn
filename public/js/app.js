@@ -33,9 +33,16 @@ $(document).ready(function () {
       _token: $('#_token').val()
     }
 
-    $.post('/projects/favorite', data, function (res) {
+    var state = $('#favorite').attr('class')
+    var url = state == 'unfav' ? 'favorite' : 'unfavorite'
+
+    $.post('/projects/' + url, data, function (res) {
         $('#favoriteCount').html(res);
-        $('#favorite').removeClass('unfav').addClass('fav');
+
+        if (state == 'fav')
+            $('#favorite').removeClass('fav').addClass('unfav')
+        else
+            $('#favorite').removeClass('unfav').addClass('fav')
     })
   })
 })
