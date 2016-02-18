@@ -25,6 +25,7 @@ $(document).ready(function () {
       })
     }
   })
+
   $('#favorite').click(function (e) {
     e.preventDefault()
     var data = {
@@ -33,11 +34,8 @@ $(document).ready(function () {
     }
 
     $.post('/projects/favorite', data, function (res) {
-      if (res == 'success') {
-        var favorites = $('#favoriteCount').html()
-        var num = Number(favorites) + 1
-        $('#favoriteCount').html(num)
-      }
+        $('#favoriteCount').html(res);
+        $('#favorite').removeClass('unfav').addClass('fav');
     })
   })
 })
