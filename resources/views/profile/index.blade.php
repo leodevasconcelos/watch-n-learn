@@ -6,7 +6,7 @@
       <div class="col s12">
         <ul class="tabs">
           <li class="tab col s3"><a href="#projects" class="active">Projects</a></li>
-          <li class="tab col s3"><a href="#favorites" class="active">Favorites</a></li>
+          <li class="tab col s3"><a href="#favorites">Favorites</a></li>
           <li class="tab col s3"><a href="#upload">Upload New Project</a></li>
           <li class="tab col s3"><a href="#settings">Profile Settings</a></li>
         </ul>
