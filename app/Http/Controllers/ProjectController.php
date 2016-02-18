@@ -2,6 +2,7 @@
 
 namespace Learn\Http\Controllers;
 
+use DB;
 use Auth;
 use Illuminate\Http\Request;
 use Learn\Comment;
@@ -60,6 +61,19 @@ class ProjectController extends Controller
             $favorite->user_id = Auth::user()->id;
             $favorite->project_id = $request->input('project_id');
             $favorite->save();
+
+            $favorites = Project::find($request->input('project_id'))->favorites()->count();
+
+            return $favorites;
+        }
+
+        return response('Unauthorized', 401);
+    }
+
+    public function unfavorite(Request $request)
+    {
+        if (Auth::check()) {
+            DB::delete('DELETE FROM favorites WHERE project_id = ? AND user_id = ?', [$request->input('project_id'), Auth::user()->id]);
 
             $favorites = Project::find($request->input('project_id'))->favorites()->count();
 
