@@ -91,6 +91,7 @@ class ProjectController extends Controller
         if ($user->id == $project->user->id) {
             $projects = $user->projects()->get();
             $favorites = $user->favoriteProjects();
+
             return view('project.edit', compact('user', 'project', 'projects', 'favorites'));
         }
 
@@ -114,6 +115,7 @@ class ProjectController extends Controller
     public function delete($id)
     {
         Project::destroy($id);
+
         return redirect('/dashboard');
     }
 }
