@@ -25,18 +25,18 @@ $(document).ready(function () {
       })
     }
   })
-  $('#like').click(function (e) {
+  $('#favorite').click(function (e) {
     e.preventDefault()
     var data = {
       project_id: $('#comment').attr('data-id'),
       _token: $('#_token').val()
     }
 
-    $.post('/projects/like', data, function (res) {
+    $.post('/projects/favorite', data, function (res) {
       if (res == 'success') {
-        var likes = $('#likeCount').html()
-        var num = Number(likes) + 1
-        $('#likeCount').html(num)
+        var favorites = $('#favoriteCount').html()
+        var num = Number(favorites) + 1
+        $('#favoriteCount').html(num)
       }
     })
   })

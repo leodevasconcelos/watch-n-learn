@@ -20,8 +20,8 @@ class Project extends Model
         return $this->hasMany('Learn\Comment');
     }
 
-    public function likes()
+    public function favorites()
     {
-        return $this->hasMany('Learn\Like');
+        return $this->hasMany('Learn\Favorite');
     }
 }

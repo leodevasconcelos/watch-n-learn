@@ -34,7 +34,11 @@ class ProfileController extends Controller
         return redirect('dashboard');
     }
 
-    public function destroy()
+    public function edit()
     {
+        $user = Auth::user();
+        $projects = $user->projects()->get();
+
+        return view('profile.settings', compact('user', 'projects'));
     }
 }

@@ -8,11 +8,14 @@
             </div>
             <div class="row">
                 <div class="col s10">
-                    <h1 class="flow-text">{{ $project->title }}</h1>
+                    <h1 class="flow-text"><blockquote>{{ $project->title }}</blockquote></h1>
+                    <p>{{ $project->description }}</p>
+                    <blockquote>{{ $project->category}}</blockquote></h1>
                 </div>
-                <h1 class="flow-text col s1"><span id="likeCount">{{ $likes }}</span>  <a href="#" id="like"><i class="small material-icons">thumb_up</i></a></h1>
+                <h1 class="flow-text col s1"><span id="favoritesCount">{{ $favorites }}</span>  <a href="#" id="favorite"><i class="small material-icons">grade</i></a></h1>
                 <h1 class="flow-text col s1"><span id="commentCount">{{ count($comments) }} </span><i class="small material-icons">chat_bubble_outline</i></h1>
             </div>
+
             <div class="comments">
                 <h2 class="flow-text">Comment below</h2>
                 <div class="comments-list">
