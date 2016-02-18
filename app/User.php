@@ -28,4 +28,22 @@ class User extends Authenticatable
     {
         return $this->hasMany('Learn\Project');
     }
+
+
+    public function favorites()
+    {
+        return $this->hasMany('Learn\Favorite');
+    }
+
+    public function favoriteProjects()
+    {
+        $fevs = $this->favorites()->get();
+        $projects = [];
+
+        foreach ($fevs as $fev) {
+            array_push($projects, $fev->project()->get());
+        }
+
+        return collect($projects)->collapse();
+    }
 }
