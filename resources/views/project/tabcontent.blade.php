@@ -3,7 +3,8 @@
 <div id="upload" class="col s12">
     <div class="tab-content">
         <h3 class="flow-text">Edit:  {{ $project->title }}</h3>
-        <form class="col s12" method="POST" action="{{ url('/projects/'.$project->id.'/update/') }}">
+        <form class="col s12" method="POST" action="{{ url('/projects/'.$project->id) }}">
+            {{ method_field('PUT') }}
             {!! csrf_field() !!}
             @include('partials.validation')
             <div class="row">
