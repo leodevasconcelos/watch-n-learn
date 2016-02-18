@@ -2,12 +2,12 @@
 
 namespace Learn\Http\Controllers;
 
-use DB;
 use Auth;
+use DB;
 use Illuminate\Http\Request;
 use Learn\Comment;
-use Learn\Project;
 use Learn\Favorite;
+use Learn\Project;
 
 class ProjectController extends Controller
 {
