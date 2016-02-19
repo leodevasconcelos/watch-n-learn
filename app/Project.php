@@ -33,11 +33,13 @@ class Project extends Model
 
     public function checkFavorite()
     {
-        $user = $this->favorites()->where('user_id', Auth::user()->id)->first();
-        if ($user) {
-            return true;
-        }
+        if (!Auth::guest()) {
+            $user = $this->favorites()->where('user_id', Auth::user()->id)->first();
+            if ($user) {
+                return true;
+            }
 
-        return false;
+            return false;
+        }
     }
 }
