@@ -12,13 +12,16 @@
                     <p>{{ $project->description }}</p>
                     <blockquote>{{ $project->category}}</blockquote></h1>
                 </div>
-                <h1 class="flow-text col s1"><span id="favoriteCount">{{ $favorites }}</span>  <a href="#" id="favorite" class="{{ $project->checkFavorite() ? 'fav' : 'unfav' }}" ><i class="small material-icons">grade</i></a></h1>
+                 <h1 class="flow-text col s1"><span id="favoriteCount">{{ $favorites }}</span>  <a href="#" id="favorite" class="{{ $project->checkFavorite() ? 'fav' : 'unfav' }}" ><i class="small material-icons">grade</i></a></h1>
                 <h1 class="flow-text col s1"><span id="commentCount">{{ count($comments) }} </span><i class="small material-icons">comment</i></h1>
-                @if ($project->user->id == Auth::user()->id)
+                @if(!Auth::guest())
+                    @if ($project->user->id == Auth::user()->id)
                     <h1 class="flow-text col s1"><a class="btn" href="{{ url('/projects/'.$project->id.'/edit') }}">EDIT</a></h1>
+                    @endif
                 @endif
             </div>
             <div class="comments">
+                @if(count($comments) > 0)
                 <h2 class="flow-text">Comment below</h2>
                 <div class="comments-list">
                     @foreach($comments as $comment)
@@ -28,11 +31,16 @@
                     </div>
                     @endforeach
                 </div>
+                @else
+                <p class="flow-text"><a href="{{ url('/login') }}">Login</a> to comment</p>
+                @endif
+                @if(!Auth::guest())
                 <div class="input-field col s12 comment">
                     <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
                     <textarea id="comment" data-id="{{ $project->id }}" class="materialize-textarea">{{ old('description') }}</textarea>
                     <label for="description">Add your comment</label>
                 </div>
+                @endif
             </div>
         </div>
     </div>
