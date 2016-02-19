@@ -32,10 +32,25 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('auth/{provider}/callback', 'Auth\AuthController@handleProviderCallback');
 
     // Profile Routes
-    Route::get('dashboard', ['middleware' => 'auth'], 'ProfileController@index');
-    Route::put('dashboard/update', ['middleware' => 'auth'], 'ProfileController@update');
-    Route::post('dashboard/updatePic', ['middleware' => 'auth'], 'ProfileController@updatePic');
-    Route::get('settings', ['middleware' => 'auth'], 'ProfileController@edit');
+    Route::get('dashboard', [
+        'middleware' => 'auth',
+        'uses'       => 'ProfileController@index'
+    ]);
+
+    Route::put('dashboard/update', [
+        'middleware' => 'auth',
+        'uses'       => 'ProfileController@update'
+    ]);
+
+    Route::post('dashboard/updatePic', [
+        'middleware' => 'auth',
+        'uses'       => 'ProfileController@updatePic'
+    ]);
+
+    Route::get('settings', [
+        'middleware' => 'auth',
+        'uses'       => 'ProfileController@edit'
+    ]);
 
     Route::get('profile/{id}', 'ProfileController@show');
 
