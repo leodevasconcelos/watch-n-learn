@@ -1,6 +1,7 @@
 $(document).ready(function () {
   $('select').material_select()
   $('.parallax').parallax()
+  $('.materialboxed').materialbox()
   $('#comment').keypress(function (key) {
     if (key.keyCode === 13) {
       var data = {
@@ -45,4 +46,12 @@ $(document).ready(function () {
             $('#favorite').removeClass('unfav').addClass('fav')
     })
   })
+
+  $('#changeProfPic').click(function() {
+    $('#image').click();
+  });
+
+  $('#image').change(function() {
+    $('#profileImageForm').submit();
+  });
 })

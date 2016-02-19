@@ -3,6 +3,7 @@
 namespace Learn\Http\Controllers;
 
 use Auth;
+use Cloudder;
 use Illuminate\Http\Request;
 use Learn\User;
 
@@ -34,6 +35,16 @@ class ProfileController extends Controller
         Auth::user()->update($request->all());
 
         return redirect('dashboard');
+    }
+
+    public function updatePic(Request $request)
+    {
+        if ($request->hasFile('image')) {
+            Cloudder::upload($request->file('image'));
+            User::find(Auth::user()->id)->updateAvatar(Cloudder::getResult()['url']);
+        }
+
+        return redirect('/settings');
     }
 
     public function edit()
