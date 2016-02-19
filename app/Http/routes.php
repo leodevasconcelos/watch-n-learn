@@ -34,22 +34,22 @@ Route::group(['middleware' => 'web'], function () {
     // Profile Routes
     Route::get('dashboard', [
         'middleware' => 'auth',
-        'uses'       => 'ProfileController@index'
+        'uses'       => 'ProfileController@index',
     ]);
 
     Route::put('dashboard/update', [
         'middleware' => 'auth',
-        'uses'       => 'ProfileController@update'
+        'uses'       => 'ProfileController@update',
     ]);
 
     Route::post('dashboard/updatePic', [
         'middleware' => 'auth',
-        'uses'       => 'ProfileController@updatePic'
+        'uses'       => 'ProfileController@updatePic',
     ]);
 
     Route::get('settings', [
         'middleware' => 'auth',
-        'uses'       => 'ProfileController@edit'
+        'uses'       => 'ProfileController@edit',
     ]);
 
     Route::get('profile/{id}', 'ProfileController@show');
