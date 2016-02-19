@@ -15,8 +15,14 @@ $(document).ready(function () {
       $.post('/projects/comment', data, function (res) {
         var html = ''
         html += '<div class="comment-view z-depth-1">'
-        html += '<h5>' + res.name + '</h5>'
-        html += '<p>' + res.comment + '</p>'
+        html += '<div class="row">'
+        html += '<span class="col s10">'
+        html += '<h5><a href="/profile/"' + res.user.id
+        html += '>' + res.user.name + '</a></h5></span>'
+        html += '<span class="col s2">'
+        html += res.comment.time + '</span>'
+        html += '</div>'
+        html += '<p>' + res.comment.comment + '</p>'
         html += '</div>'
 
         $('.comments-list').append(html)

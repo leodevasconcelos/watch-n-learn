@@ -21,25 +21,30 @@
                 @endif
             </div>
             <div class="comments">
-                @if(count($comments) > 0)
-                <h2 class="flow-text">Comment below</h2>
+                <h2 class="flow-text">Comments</h2>
                 <div class="comments-list">
                     @foreach($comments as $comment)
                     <div class="comment-view z-depth-1">
-                    <h5>{{ $comment->user->name }}</h5>
-                    <p>{{ $comment->comment }}</p>
+                    <div class="row">
+                        <span class="col s10">
+                            <h5><a href="{{ url('/profile/'.$comment->user->id) }}">{{ $comment->user->name }}</a></h5>
+                        </span>
+                        <span class="col s2">
+                            {{ $comment->created_at->diffForHumans()}}
+                        </span>
+                    </div>
+                                        <p>{{ $comment->comment }}</p>
                     </div>
                     @endforeach
                 </div>
-                @else
-                <p class="flow-text"><a href="{{ url('/login') }}">Login</a> to comment</p>
-                @endif
                 @if(!Auth::guest())
                 <div class="input-field col s12 comment">
                     <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
                     <textarea id="comment" data-id="{{ $project->id }}" class="materialize-textarea">{{ old('description') }}</textarea>
                     <label for="description">Add your comment</label>
                 </div>
+                @else
+                <p class="flow-text"><a href="{{ url('/login') }}">Login</a> to comment</p>
                 @endif
             </div>
         </div>
