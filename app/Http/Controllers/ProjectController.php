@@ -47,11 +47,11 @@ class ProjectController extends Controller
         $comment->user_id = Auth::user()->id;
         $comment->project_id = $request->input('project_id');
         $comment->save();
+        $comment->time = $comment->created_at->diffForHumans();
 
-        $name = Auth::user()->name;
-        $comment = $request->input('comment');
+        $user = Auth::user();
 
-        return compact('name', 'comment');
+        return compact('user', 'comment');
     }
 
     public function favorite(Request $request)
