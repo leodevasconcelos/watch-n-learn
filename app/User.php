@@ -65,4 +65,10 @@ class User extends Authenticatable
     {
         return (!is_null($this->avatar)) ? $this->avatar : $this->getAvatarFromGravatar();
     }
+
+    public function updateAvatar($url)
+    {
+        $this->avatar = $url;
+        $this->save();
+    }
 }

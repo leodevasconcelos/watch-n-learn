@@ -34,6 +34,7 @@ Route::group(['middleware' => 'web'], function () {
     // Profile Routes
     Route::get('dashboard', 'ProfileController@index');
     Route::put('dashboard/update', 'ProfileController@update');
+    Route::post('dashboard/updatePic', 'ProfileController@updatePic');
     Route::get('settings', 'ProfileController@edit');
 
     Route::get('profile/{id}', 'ProfileController@show');
