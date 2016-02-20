@@ -13,7 +13,7 @@ class ProjectController extends Controller
 {
     public function show($id)
     {
-        $project = Project::find($id);
+        $project = Project::findOrFail($id);
         $comments = $project->comments()->get();
         $favorites = $project->favorites()->count();
 

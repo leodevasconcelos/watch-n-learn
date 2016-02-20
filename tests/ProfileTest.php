@@ -7,7 +7,18 @@ class ProfileTest extends TestCase
     use DatabaseMigrations;
 
     /**
-     * A basic test example.
+     * Test Profile Updating.
+     *
+     * @return void
+     */
+    public function testProfileUpdateWithoutAuth()
+    {
+        $this->visit('/dashboard')
+            ->seePageIs('/login');
+    }
+
+    /**
+     * Test Profile Updating.
      *
      * @return void
      */
