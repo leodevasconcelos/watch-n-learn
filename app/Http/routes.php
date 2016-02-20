@@ -58,7 +58,7 @@ Route::group(['middleware' => 'web'], function () {
     Route::get('projects/{id}', 'ProjectController@show');
     Route::get('projects/{id}/edit', [
         'middleware' => 'auth',
-        'uses'       => 'ProjectController@edit'
+        'uses'       => 'ProjectController@edit',
     ]);
 
     Route::post('projects', 'ProjectController@save');
