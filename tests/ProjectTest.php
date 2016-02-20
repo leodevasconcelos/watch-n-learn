@@ -34,4 +34,10 @@ class ProjectTest extends TestCase
             ->visit('/projects/'.$project->id)
             ->see($project->title);
     }
+
+    public function testVisitEditWithoutAuth()
+    {
+        $this->visit('/projects/1/edit')
+            ->seePageIs('/login');
+    }
 }
