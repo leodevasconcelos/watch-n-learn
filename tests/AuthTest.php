@@ -20,7 +20,7 @@ class AuthTest extends TestCase
             ->type('123456789', 'password')
             ->type('123456789', 'password_confirmation')
             ->press('Register')
-            ->seePageIs('/')
+            ->seePageIs('/dashboard')
             ->see('Ganga Christopher')
             ->seeInDatabase('users', ['email' => 'ganga.chris@gmail.com']);
     }
@@ -42,6 +42,7 @@ class AuthTest extends TestCase
             ->type('ganga.chris@gmail.com', 'email')
             ->type('123456789', 'password')
             ->press('Login')
+            ->seePageIs('/dashboard')
             ->see('Ganga Christopher');
     }
 }
