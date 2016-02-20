@@ -24,4 +24,14 @@ class ProjectTest extends TestCase
             ->press('Upload')
             ->seeInDatabase('projects', ['url' => 'fRh_vgS2dFE']);
     }
+
+    public function testViewCorrectProject()
+    {
+        $project = factory(Learn\Project::class)->create();
+        $user = factory(Learn\User::class)->create();
+        $this->visit('/')
+            ->see($project->title)
+            ->visit('/projects/'.$project->id)
+            ->see($project->title);
+    }
 }
