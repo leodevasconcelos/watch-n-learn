@@ -64,4 +64,42 @@ class ProjectTest extends TestCase
 
         $this->seeInDatabase('projects', ['title' => $title, 'description' => $description]);
     }
+
+    public function testCommentWithoutAuth()
+    {
+        $project = factory(Learn\Project::class)->create();
+        $user = factory(Learn\User::class)->create();
+        $this->visit('/projects/'.$project->id)
+            ->dontSee('Add your comment');
+    }
+
+    public function testSeeCommentOnProjectWhenLoggedIn()
+    {
+        $project = factory(Learn\Project::class)->create();
+        $user = factory(Learn\User::class)->create();
+        $this->actingAs($user)
+            ->visit('/projects/'.$project->id)
+            ->see('Add your comment');
+    }
+
+    public function testCommentOnProject()
+    {
+        $project = factory(Learn\Project::class)->create();
+        $user = factory(Learn\User::class)->create();
+        $comment = 'This is a test comment';
+
+        $this->actingAs($user)
+            ->call(
+                'POST',
+                '/projects/comment',
+                [
+                    'comment'    => $comment,
+                    '_token'     => csrf_token(),
+                    'project_id' => $project->id,
+                ]
+            );
+
+        $this->visit('/projects/'.$project->id)
+            ->see($comment);
+    }
 }
