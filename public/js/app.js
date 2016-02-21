@@ -2,6 +2,7 @@ $(document).ready(function () {
   $('select').material_select()
   $('.parallax').parallax()
   $('.materialboxed').materialbox()
+  $(".button-collapse").sideNav()
   $('#comment').keypress(function (key) {
     if (key.keyCode === 13) {
       var data = {

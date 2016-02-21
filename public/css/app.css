@@ -5,6 +5,13 @@
  *
  * Made By MaterializeCSS.com
  */
+html {
+  position: relative;
+  min-height: 100%; }
+
+body {
+  margin-bottom: 100px; }
+
 nav ul a,
 nav .brand-logo {
   color: #444; }
@@ -63,7 +70,8 @@ nav .brand-logo {
   margin-top: 20px; }
 
 footer {
-  width: 100vw;
+  height: 100px;
+  min-width: 100%;
   position: absolute;
   bottom: 0; }
 
