@@ -29,8 +29,7 @@
                 <label for="bio">Bio</label>
               </div>
             </div>
-            <div class="row"><!--
-              <button class="waves-effect waves-light btn col s2 offset-s8"><i class="material-icons left">cancel</i>Cancel</a> -->
+            <div class="row">
               <button type="submit" class="waves-effect waves-light btn col s2 offset-s10">Save</button>
             </div>
         </form>

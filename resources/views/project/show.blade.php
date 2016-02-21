@@ -33,14 +33,14 @@
                             {{ $comment->created_at->diffForHumans()}}
                         </span>
                     </div>
-                                        <p>{{ $comment->comment }}</p>
+                        <p>{{ $comment->comment }}</p>
                     </div>
                     @endforeach
                 </div>
                 @if(!Auth::guest())
                 <div class="input-field col s12 comment">
                     <input type="hidden" name="_token" id="_token" value="{{ csrf_token() }}">
-                    <textarea id="comment" data-id="{{ $project->id }}" class="materialize-textarea">{{ old('description') }}</textarea>
+                    <textarea id="comment" name="comment" data-id="{{ $project->id }}" class="materialize-textarea"></textarea>
                     <label for="description">Add your comment</label>
                 </div>
                 @else
