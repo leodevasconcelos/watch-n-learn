@@ -62,9 +62,9 @@ Route::group(['middleware' => 'web'], function () {
     ]);
 
     Route::post('projects', 'ProjectController@save');
-    Route::post('projects/comment', 'ProjectController@comment');
     Route::put('projects/{id}', 'ProjectController@update');
     Route::delete('projects/{id}', 'ProjectController@delete');
+    Route::post('projects/comment', 'ProjectController@comment');
     Route::post('projects/favorite', 'ProjectController@favorite');
     Route::post('projects/unfavorite', 'ProjectController@unfavorite');
 });
