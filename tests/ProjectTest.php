@@ -65,6 +65,35 @@ class ProjectTest extends TestCase
         $this->seeInDatabase('projects', ['title' => $title, 'description' => $description]);
     }
 
+    public function testDeleteProjectWithoutAuth()
+    {
+        $project = factory(Learn\Project::class)->create();
+        $response = $this->call(
+            'DELETE',
+            '/projects/'.$project->id
+        );
+
+        $this->assertEquals(401, $response->status());
+    }
+
+    public function testDeleteProject()
+    {
+        $project = factory(Learn\Project::class)->create();
+        $user = factory(Learn\User::class)->create();
+
+        $this->seeInDatabase('projects', ['title' => $project->title]);
+
+        $response = $this->actingAs($user)
+            ->call(
+                'DELETE',
+                '/projects/'.$project->id
+            );
+
+        $this->visit('/')
+            ->dontSee($project->title)
+            ->dontSeeInDatabase('projects', ['title' => $project->title]);
+    }
+
     public function testCommentWithoutAuth()
     {
         $project = factory(Learn\Project::class)->create();
