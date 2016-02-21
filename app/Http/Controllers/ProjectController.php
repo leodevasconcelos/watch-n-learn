@@ -121,6 +121,5 @@ class ProjectController extends Controller
         }
 
         return response('Unauthorized', 401);
-
     }
 }
