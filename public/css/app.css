@@ -17,8 +17,8 @@ nav .brand-logo {
   margin-top: 30px; }
 
 .profile-image {
-  max-width: 250px;
-  max-height: 250px; }
+  max-width: 200px;
+  max-height: 200px; }
 
 .username {
   font-size: 2em; }
@@ -38,9 +38,6 @@ nav .brand-logo {
 
 .mirg {
   margin-left: 5px; }
-
-.project {
-  padding: 30px 2px; }
 
 .theatre {
   background-color: #000000;

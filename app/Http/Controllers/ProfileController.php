@@ -57,6 +57,10 @@ class ProfileController extends Controller
         $projects = $user->projects()->get();
         $favorites = $user->favoriteProjects();
 
+        if (Auth::user()->id == $user->id) {
+            return view('profile.index', compact('user', 'projects', 'favorites'));
+        }
+
         return view('profile.user', compact('user', 'projects', 'favorites'));
     }
 }
