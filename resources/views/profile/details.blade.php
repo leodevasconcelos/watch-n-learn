@@ -1,4 +1,4 @@
-<div class="col s3">
+<div class="col l3 m6 s12">
   <div class="prof-image-div">
     <img class="z-depth-1 profile-image" src="{{ $user->getAvatar() }}" alt="">
     @if(! Auth::guest())

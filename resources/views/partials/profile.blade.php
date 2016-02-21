@@ -1,5 +1,5 @@
 <div id="settings" class="col s12">
-    <div class="tab-content">
+    <div class="tab-content section">
         <h3 class="flow-text">Update Your Profile</h3>
         @include('partials.validation')
         <form class="col s12" method="POST" action="{{ url('dashboard/update') }}">
