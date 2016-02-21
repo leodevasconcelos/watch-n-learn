@@ -37,13 +37,13 @@
                 </div>
             </div>
             <div class="row">
-                <button style="margin-right:10px;" type="submit" name="Upload" class="waves-effect waves-light btn col s2 offset-s7">Save</a>
-                <form action="{{ url('projects/'.$project->id) }}" class="col s2">
+                <button style="margin-right:10px;" type="submit" class="waves-effect waves-light btn col s2 offset-s7">Save</button></form>
+                <form action="{{ url('projects/'.$project->id) }}" method="POST" class="col s2">
                     {{ method_field('DELETE') }}
+                    {!! csrf_field() !!}
                     <button type="submit" class="waves-effect waves-light btn">Delete</a>
                 </form>
             </div>
-        </form>
     </div>
 </div>
 @include('partials.profile')
