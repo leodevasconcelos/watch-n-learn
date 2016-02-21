@@ -114,8 +114,13 @@ class ProjectController extends Controller
 
     public function delete($id)
     {
-        Project::destroy($id);
+        if (Auth::check()) {
+            Project::destroy($id);
 
-        return redirect('/dashboard');
+            return redirect('/dashboard');
+        }
+
+        return response('Unauthorized', 401);
+
     }
 }
