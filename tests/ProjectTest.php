@@ -102,4 +102,38 @@ class ProjectTest extends TestCase
         $this->visit('/projects/'.$project->id)
             ->see($comment);
     }
+
+    public function testFavoriteWithoutAuth()
+    {
+        $response = $this->call(
+            'POST',
+            '/projects/favorite'
+        );
+        $this->assertEquals(401, $response->status());
+    }
+
+    public function testFavoriteAProject()
+    {
+        $project = factory(Learn\Project::class)->create();
+        $project2 = factory(Learn\Project::class)->create();
+        $user = factory(Learn\User::class)->create();
+
+        $this->actingAs($user)
+            ->call(
+                'POST',
+                '/projects/favorite',
+                [
+                    'project_id' => $project->id,
+                    '_token'     => csrf_token(),
+                ]
+            );
+
+        $this->actingAs($user)
+            ->visit('/projects/'.$project->id)
+            ->see('fav'); // fav is a css class added when a user has favorited a video/project
+
+        $this->actingAs($user)
+            ->visit('/projects/'.$project2->id)
+            ->see('unfav');  // unfav is a css class added when a user has not favorited a video/project
+    }
 }
