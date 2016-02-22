@@ -1,8 +1,9 @@
 $(document).ready(function () {
+  $(".dropdown-button").dropdown()
+  $(".button-collapse").sideNav()
   $('select').material_select()
   $('.parallax').parallax()
   $('.materialboxed').materialbox()
-  $(".button-collapse").sideNav()
   $('#comment').keypress(function (key) {
     if (key.keyCode === 13) {
       var data = {
