@@ -19,7 +19,10 @@
                         <option value="" disabled {{ $project->category == '' ? 'selected' : '' }}>Choose your option</option>
                         <option value="programming" {{ $project->category == 'programming' ? 'selected' : '' }}>Programming</option>
                         <option value="design" {{ $project->category == 'design' ? 'selected' : '' }}>Design</option>
+                        <option value="devops" {{ $project->category == 'devops' ? 'selected' : '' }}>DevOps</option>
+                        <option value="testing" {{ $project->category == 'testing' ? 'selected' : '' }}>Testing</option>
                         <option value="other" {{ $project->category == 'other' ? 'selected' : '' }}>Other</option>
+
                     </select>
                     <label>Category</label>
                 </div>
