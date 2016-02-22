@@ -18,6 +18,8 @@
                         <option value="" disabled {{ old('category') == '' ? 'selected' : '' }}>Choose your option</option>
                         <option value="programming" {{ old('category') == 'programming' ? 'selected' : '' }}>Programming</option>
                         <option value="design" {{ old('category') == 'design' ? 'selected' : '' }}>Design</option>
+                        <option value="devops" {{ old('category') == 'devops' ? 'selected' : '' }}>DevOps</option>
+                        <option value="testing" {{ old('category') == 'testing' ? 'selected' : '' }}>Testing</option>
                         <option value="other" {{ old('category') == 'other' ? 'selected' : '' }}>Other</option>
                     </select>
                     <label>Category</label>
