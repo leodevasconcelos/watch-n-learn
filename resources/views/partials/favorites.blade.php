@@ -4,7 +4,7 @@
         <div class="row section">
         @foreach($favorites as $favorite)
             <div class="col s4">
-                <div class="project">
+                <div class="project section">
                 <iframe width="225" height="127" src="https://www.youtube.com/embed/{{ $favorite->url }}" frameborder="0" allowfullscreen></iframe>
                 <h6 class="flow-text"><a href="{{ url('projects/'.$favorite->id) }}"> {{$favorite->title}} </a></h6>
                 </div>

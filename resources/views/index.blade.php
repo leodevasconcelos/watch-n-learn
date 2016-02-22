@@ -20,6 +20,7 @@
                 </div>
             @endforeach
             </div>
+            <div class="center">{!! $projects->links() !!}</div>
             <div class="divider"></div>
         </div>
   </div>

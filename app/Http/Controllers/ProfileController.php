@@ -12,7 +12,7 @@ class ProfileController extends Controller
     public function index()
     {
         $user = Auth::user();
-        $projects = $user->projects()->get();
+        $projects = $user->projects()->latest()->paginate(9);
         $favorites = $user->favoriteProjects();
 
         return view('profile.index', compact('user', 'projects', 'favorites'));
@@ -45,7 +45,7 @@ class ProfileController extends Controller
     public function edit()
     {
         $user = Auth::user();
-        $projects = $user->projects()->get();
+        $projects = $user->projects()->latest()->paginate(9);
         $favorites = $user->favoriteProjects();
 
         return view('profile.settings', compact('user', 'projects', 'favorites'));
@@ -54,7 +54,7 @@ class ProfileController extends Controller
     public function show($id)
     {
         $user = User::find($id);
-        $projects = $user->projects()->get();
+        $projects = $user->projects()->latest()->paginate(9);
         $favorites = $user->favoriteProjects();
 
         if (Auth::user()->id == $user->id) {

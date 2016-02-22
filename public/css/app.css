@@ -16,6 +16,9 @@ nav ul a,
 nav .brand-logo {
   color: #444; }
 
+.flow-text {
+  font-size: 1.2rem; }
+
 .learn-nav {
   font-weight: 100;
   padding: 0 10px 10px 10px; }
