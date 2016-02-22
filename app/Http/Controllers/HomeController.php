@@ -13,7 +13,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $projects = Project::all();
+        $projects = Project::orderBy('created_at', 'desc')->paginate(12);
 
         return view('index', compact('projects'));
     }

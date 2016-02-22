@@ -89,7 +89,7 @@ class ProjectController extends Controller
         $project = Project::find($id);
 
         if ($user->id == $project->user->id) {
-            $projects = $user->projects()->get();
+            $projects = $user->projects()->latest()->paginate(9);
             $favorites = $user->favoriteProjects();
 
             return view('project.edit', compact('user', 'project', 'projects', 'favorites'));
