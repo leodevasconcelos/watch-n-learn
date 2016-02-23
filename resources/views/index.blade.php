@@ -1,14 +1,21 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="parallax-container">
-        <div class="parallax">
-            <img src="/images/desk.jpeg">
+    <div class="slider">
+    <ul class="slides">
+      <li>
+        <img src="/images/desk.jpeg"> <!-- random image -->
+        <div class="caption center-align">
+          <h3 class="white-text">Watch n Learn Anything!</h3>
+         <a class="btn btn-large blue-grey darken-4" href="{{ url('/register') }}">Get Started</a>
         </div>
-    </div>
+      </li>
+
+    </ul>
+  </div>
     <div class="section white">
         <div class="row container">
-            <h2 class="flow-text">Go from Zero to One, by watching n learning</h2>
+            <h3 class="flow-text blue-grey-text">Latest vidoes</h3>
             <div class="divider"></div>
             <div class="row">
             @foreach($projects as $project)

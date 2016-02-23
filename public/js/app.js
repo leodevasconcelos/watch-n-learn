@@ -1,6 +1,11 @@
 $(document).ready(function () {
   $(".dropdown-button").dropdown()
   $(".button-collapse").sideNav()
+  $(document).ready(function(){
+      $('.slider').slider({
+        full_width: true,
+        indicators: false});
+    });
   $('select').material_select()
   $('.parallax').parallax()
   $('.materialboxed').materialbox()

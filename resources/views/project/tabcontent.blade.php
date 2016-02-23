@@ -40,11 +40,11 @@
                 </div>
             </div>
             <div class="row">
-                <button style="margin-right:10px;" type="submit" class="waves-effect waves-light btn col s2 offset-s7">Save</button></form>
+                <button style="margin-right:10px;" type="submit" class="waves-effect waves-light btn blue-grey darken-4 col s2 offset-s7">Save</button></form>
                 <form action="{{ url('projects/'.$project->id) }}" method="POST" class="col s2">
                     {{ method_field('DELETE') }}
                     {!! csrf_field() !!}
-                    <button type="submit" class="waves-effect waves-light btn">Delete</a>
+                    <button type="submit" class="waves-effect waves-light btn blue-grey darken-4">Delete</a>
                 </form>
             </div>
     </div>

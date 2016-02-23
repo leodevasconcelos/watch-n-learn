@@ -1,12 +1,12 @@
 // @import "node_modules/bootstrap-sass/assets/stylesheets/bootstrap";
-
 $grey: #f4f4f4;
 $facebook-blue: #3B5998;
 $twitter-blue: #4099FF;
 $github-black: #000000;
 $google-red: #d62d20;
+$theme-color: #263238;
 
-/* Custom Stylesheet */
+/* Custom Stylesheet *
 /**
  * Use this file to override Materialize files so you can update
  * the core Materialize files in the future
@@ -18,12 +18,14 @@ html {
     position: relative;
     min-height: 100%;
 }
+
 body {
     margin-bottom: 100px;
 }
+
 nav ul a,
 nav .brand-logo {
-  color: #444;
+    color: #444;
 }
 
 .flow-text {
@@ -33,50 +35,57 @@ nav .brand-logo {
 .learn-nav {
     font-weight: 100;
     padding: 0 10px 10px 10px;
+    color: #fff;
 }
+
+.learn-nav a {
+    color: #fff;
+}
+
 .content {
-  margin-top: 30px;
+    margin-top: 30px;
 }
 
 .profile-image {
-  max-width: 200px;
-  max-height: 200px;
+    max-width: 200px;
+    max-height: 200px;
 }
 
 .username {
-  font-size: 2em;
+    font-size: 2em;
 }
 
 .name {
-  font-size: 1.5em;
+    font-size: 1.5em;
 }
 
 .bio {
-  font-size: 1em;
+    font-size: 1em;
 }
 
 .tab-content {
-  margin-top:30px;
+    margin-top: 30px;
 }
 
-.center{
+.center {
     margin: 0 auto;
     width: 30%;
 }
 
 .mirg {
-  margin-left: 5px;
+    margin-left: 5px;
 }
 
-// .project {
-//     padding: 30px 2px
-// }
+.project a {
+    color: #263238;
+}
 
 .theatre {
-    background-color: $github-black;
-    height: 480px;
+    background-color: $theme-color;
+    height: 500px;
     width: 100vw;
-    margin-top: -10px;
+    padding-top: 10px;
+    padding-bottom: 10px;
 }
 
 .player {
@@ -102,10 +111,11 @@ nav .brand-logo {
 }
 
 footer {
-    height:100px;
+    height: 100px;
     min-width: 100%;
-    position:absolute;
-    bottom:0;
+    position: absolute;
+    bottom: 0;
+    color: white;
 }
 
 .facebook-blue {
@@ -125,46 +135,102 @@ footer {
 }
 
 p {
-  line-height: 2rem;
+    line-height: 2rem;
 }
 
 .button-collapse {
-  color: #26a69a;
+    color: #26a69a;
 }
 
 .parallax-container {
-  min-height: 380px;
-  line-height: 0;
-  height: auto;
-  color: rgba(255,255,255,.9);
+    min-height: 380px;
+    line-height: 0;
+    height: auto;
+    color: rgba(255, 255, 255, .9);
 }
-  .parallax-container .section {
+
+.parallax-container .section {
     width: 100%;
-  }
-
-@media only screen and (max-width : 992px) {
-  .parallax-container .section {
-    position: absolute;
-    top: 40%;
-  }
-  #index-banner .section {
-    top: 10%;
-  }
 }
 
-@media only screen and (max-width : 600px) {
-  #index-banner .section {
-    top: 0;
-  }
+@media only screen and (max-width: 992px) {
+    .parallax-container .section {
+        position: absolute;
+        top: 40%;
+    }
+    #index-banner .section {
+        top: 10%;
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    #index-banner .section {
+        top: 0;
+    }
 }
 
 .icon-block {
-  padding: 0 15px;
+    padding: 0 15px;
 }
+
 .icon-block .material-icons {
-  font-size: inherit;
+    font-size: inherit;
 }
 
 footer.page-footer {
-  margin: 0;
+    margin: 0;
+}
+
+
+/* label color */
+
+.input-field label {
+    color: $theme-color;
+}
+
+
+/* label focus color */
+
+.input-field input[type=text]:focus + label {
+    color: $theme-color;
+}
+
+
+/* label underline focus color */
+
+.input-field input[type=text]:focus {
+    border-bottom: 1px solid $theme-color;
+    box-shadow: 0 1px 0 0 $theme-color;
+}
+
+
+/* valid color */
+
+.input-field input[type=text].valid {
+    border-bottom: 1px solid $theme-color;
+    box-shadow: 0 1px 0 0 $theme-color;
+}
+
+
+/* invalid color */
+
+.input-field input[type=text].invalid {
+    border-bottom: 1px solid $theme-color;
+    box-shadow: 0 1px 0 0 $theme-color;
+}
+
+
+/* icon prefix focus color */
+
+.input-field .prefix.active {
+    color: $theme-color;
+}
+
+.pagination li.active {
+    background-color: $theme-color;
+    color: white;
+}
+
+blockquote {
+    border-left: 5px solid $theme-color;
 }

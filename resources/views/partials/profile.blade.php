@@ -30,7 +30,7 @@
               </div>
             </div>
             <div class="row">
-              <button type="submit" class="waves-effect waves-light btn col s2 offset-s10">Save</button>
+              <button type="submit" class="waves-effect waves-light btn blue-grey darken-4 col s2 offset-s10">Save</button>
             </div>
         </form>
     </div>

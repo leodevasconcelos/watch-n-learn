@@ -19,7 +19,7 @@
                 <h1 class="flow-text col s1"><span id="commentCount">{{ count($comments) }} </span><i class="small material-icons">comment</i></h1>
                 @if(!Auth::guest())
                     @if ($project->user->id == Auth::user()->id)
-                    <h1 class="flow-text col s1"><a class="btn" href="{{ url('/projects/'.$project->id.'/edit') }}">EDIT</a></h1>
+                    <h1 class="flow-text col s1"><a class="btn blue-grey darken-4" href="{{ url('/projects/'.$project->id.'/edit') }}">EDIT</a></h1>
                     @endif
                 @endif
             </div>
