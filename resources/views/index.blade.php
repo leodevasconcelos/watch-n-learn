@@ -14,7 +14,7 @@
             @foreach($projects as $project)
                 <div class="col l3 m4 s6">
                     <div class="project section">
-                        <iframe width="225" height="127" src="https://www.youtube.com/embed/{{ $project->url }}" frameborder="0" allowfullscreen></iframe>
+                        <a href="{{ url('projects/'.$project->id) }}"><img width="225" height="127" src="http://img.youtube.com/vi/{{ $project->url }}/0.jpg"></a>
                         <h6 class="flow-text"><a href="{{ url('projects/'.$project->id) }}"> {{$project->title}} </a></h6>
                     </div>
                 </div>

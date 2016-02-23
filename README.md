@@ -71,7 +71,7 @@ $ vendor/bin/phpunit
 
 ### License
 
-The TechLMS project is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
+The Watch n Learn project is open-sourced software licensed under the [MIT license](http://opensource.org/licenses/MIT)
 
 
 Made with :heart: by [Ganga Christopher](https://github.com/andela-cganga)
