@@ -103,10 +103,12 @@ class AuthController extends Controller
 
         Auth::login($authUser, true);
 
-        //return view('index');
         return redirect($this->redirectTo);
     }
 
+    /**
+     * Find user based on Oauth details, or create one if none is found
+     */
     public function findOrCreateUser($user, $provider)
     {
         $authUser = User::where('uid', $user->id)->first();

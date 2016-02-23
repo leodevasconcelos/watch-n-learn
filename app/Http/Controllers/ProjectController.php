@@ -11,6 +11,9 @@ use Learn\Project;
 
 class ProjectController extends Controller
 {
+    /**
+     * Show particular learning resource
+     */
     public function show($id)
     {
         $project = Project::findOrFail($id);
@@ -20,6 +23,9 @@ class ProjectController extends Controller
         return view('project.show', compact('project', 'comments', 'favorites'));
     }
 
+    /**
+     * Save new project
+     */
     public function save(Request $request)
     {
         $this->validate($request, [
@@ -40,6 +46,10 @@ class ProjectController extends Controller
         return redirect('dashboard');
     }
 
+    /**
+     * Comment on a project
+     * @return json containing user and the comment
+     */
     public function comment(Request $request)
     {
         $comment = new Comment();
@@ -54,6 +64,9 @@ class ProjectController extends Controller
         return compact('user', 'comment');
     }
 
+    /**
+     * Favorite a project
+     */
     public function favorite(Request $request)
     {
         if (Auth::check()) {
@@ -70,6 +83,9 @@ class ProjectController extends Controller
         return response('Unauthorized', 401);
     }
 
+    /**
+     * Unfavorite a project
+     */
     public function unfavorite(Request $request)
     {
         if (Auth::check()) {
@@ -83,6 +99,10 @@ class ProjectController extends Controller
         return response('Unauthorized', 401);
     }
 
+    /**
+     * Return edit view for a project
+     * @param  integer $id id of the project to be edited
+     */
     public function edit($id)
     {
         $user = Auth::user();
@@ -98,6 +118,10 @@ class ProjectController extends Controller
         return redirect('/projects/'.$id);
     }
 
+    /**
+     * Update a project
+     * @param  integer $id id of the project to be updated
+     */
     public function update(Request $request, $id)
     {
         $this->validate($request, [
@@ -112,6 +136,10 @@ class ProjectController extends Controller
         return redirect('/projects/'.$id);
     }
 
+    /**
+     * Delete a project
+     * @param  integer $id id of the project to be deleted
+     */
     public function delete($id)
     {
         if (Auth::check()) {
