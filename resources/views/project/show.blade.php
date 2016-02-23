@@ -6,7 +6,10 @@
             <div class="player">
                 <iframe width="853" height="480" src="https://www.youtube.com/embed/{{ $project->url }}" frameborder="0" allowfullscreen></iframe>
             </div>
-            <div class="row">
+        </div>
+    </div>
+    <div class="container">
+        <div class="row">
                 <div class="col s9">
                     <h1 class="flow-text"><blockquote>{{ $project->title }} <small>by <a href="{{ url('/profile/'.$project->user->id) }}">{{ $project->user->name }}</a></small></blockquote> </h1>
                     <p>{{ $project->description }}</p>
@@ -47,6 +50,5 @@
                 <p class="flow-text"><a href="{{ url('/login') }}">Login</a> to comment</p>
                 @endif
             </div>
-        </div>
     </div>
 @endsection
