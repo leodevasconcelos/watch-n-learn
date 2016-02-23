@@ -12,7 +12,7 @@ use Learn\Project;
 class ProjectController extends Controller
 {
     /**
-     * Show particular learning resource
+     * Show particular learning resource.
      */
     public function show($id)
     {
@@ -24,7 +24,7 @@ class ProjectController extends Controller
     }
 
     /**
-     * Save new project
+     * Save new project.
      */
     public function save(Request $request)
     {
@@ -47,7 +47,8 @@ class ProjectController extends Controller
     }
 
     /**
-     * Comment on a project
+     * Comment on a project.
+     *
      * @return json containing user and the comment
      */
     public function comment(Request $request)
@@ -65,7 +66,7 @@ class ProjectController extends Controller
     }
 
     /**
-     * Favorite a project
+     * Favorite a project.
      */
     public function favorite(Request $request)
     {
@@ -84,7 +85,7 @@ class ProjectController extends Controller
     }
 
     /**
-     * Unfavorite a project
+     * Unfavorite a project.
      */
     public function unfavorite(Request $request)
     {
@@ -100,8 +101,9 @@ class ProjectController extends Controller
     }
 
     /**
-     * Return edit view for a project
-     * @param  integer $id id of the project to be edited
+     * Return edit view for a project.
+     *
+     * @param int $id id of the project to be edited
      */
     public function edit($id)
     {
@@ -119,8 +121,9 @@ class ProjectController extends Controller
     }
 
     /**
-     * Update a project
-     * @param  integer $id id of the project to be updated
+     * Update a project.
+     *
+     * @param int $id id of the project to be updated
      */
     public function update(Request $request, $id)
     {
@@ -137,8 +140,9 @@ class ProjectController extends Controller
     }
 
     /**
-     * Delete a project
-     * @param  integer $id id of the project to be deleted
+     * Delete a project.
+     *
+     * @param int $id id of the project to be deleted
      */
     public function delete($id)
     {

@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Favorite extends Model
 {
     /**
-     * Favorite belongs to User relationship
+     * Favorite belongs to User relationship.
      */
     public function user()
     {
@@ -15,7 +15,7 @@ class Favorite extends Model
     }
 
     /**
-     * Favorite belongs to a project relationship
+     * Favorite belongs to a project relationship.
      */
     public function project()
     {

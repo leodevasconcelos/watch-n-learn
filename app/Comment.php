@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Comment extends Model
 {
     /**
-     * Comment belongs to User relationship
+     * Comment belongs to User relationship.
      */
     public function user()
     {

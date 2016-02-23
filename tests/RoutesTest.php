@@ -18,7 +18,7 @@ class RoutesTest extends TestCase
     }
 
     /**
-     * Test for register route
+     * Test for register route.
      *
      * @return void
      */
@@ -29,7 +29,7 @@ class RoutesTest extends TestCase
     }
 
     /**
-     * Test for login route
+     * Test for login route.
      *
      * @return void
      */
@@ -40,7 +40,7 @@ class RoutesTest extends TestCase
     }
 
     /**
-     * Test for Dashboard route
+     * Test for Dashboard route.
      *
      * @return void
      */

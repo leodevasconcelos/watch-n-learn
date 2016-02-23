@@ -107,7 +107,7 @@ class AuthController extends Controller
     }
 
     /**
-     * Find user based on Oauth details, or create one if none is found
+     * Find user based on Oauth details, or create one if none is found.
      */
     public function findOrCreateUser($user, $provider)
     {

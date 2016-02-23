@@ -10,7 +10,7 @@ use Learn\User;
 class ProfileController extends Controller
 {
     /**
-     * Return user dashboard
+     * Return user dashboard.
      */
     public function index()
     {
@@ -22,7 +22,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Update user details
+     * Update user details.
      */
     public function update(Request $request)
     {
@@ -39,7 +39,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Update user avatar
+     * Update user avatar.
      */
     public function updatePic(Request $request)
     {
@@ -52,7 +52,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Return profile settings page
+     * Return profile settings page.
      */
     public function edit()
     {
@@ -64,7 +64,7 @@ class ProfileController extends Controller
     }
 
     /**
-     * Show a particular user profile
+     * Show a particular user profile.
      */
     public function show($id)
     {
