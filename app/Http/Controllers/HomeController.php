@@ -8,7 +8,6 @@ class HomeController extends Controller
 {
     /**
      * Show the application landing page.
-     *
      */
     public function index()
     {

@@ -25,7 +25,7 @@ class User extends Authenticatable
     ];
 
     /**
-     * User has many projects relationship
+     * User has many projects relationship.
      */
     public function projects()
     {
@@ -33,7 +33,7 @@ class User extends Authenticatable
     }
 
     /**
-     * User has many favorites relationship
+     * User has many favorites relationship.
      */
     public function favorites()
     {
@@ -41,7 +41,8 @@ class User extends Authenticatable
     }
 
     /**
-     * Get users's favorited projects
+     * Get users's favorited projects.
+     *
      * @return Collection of projects the user has favorited
      */
     public function favoriteProjects()
@@ -77,7 +78,7 @@ class User extends Authenticatable
     }
 
     /**
-     * Update avatar of the user
+     * Update avatar of the user.
      *
      * return void
      */

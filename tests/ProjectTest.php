@@ -26,7 +26,7 @@ class ProjectTest extends TestCase
     }
 
     /**
-     * Test for viewing correct project when clicked on
+     * Test for viewing correct project when clicked on.
      *
      * @return void
      */
@@ -42,7 +42,7 @@ class ProjectTest extends TestCase
 
     /**
      * Test for viewing edit without auth
-     * User is redirected to login
+     * User is redirected to login.
      *
      * @return void
      */
@@ -53,7 +53,7 @@ class ProjectTest extends TestCase
     }
 
     /**
-     * Test for editing a project
+     * Test for editing a project.
      *
      * @return void
      */
@@ -83,7 +83,7 @@ class ProjectTest extends TestCase
 
     /**
      * Test for deleting a project without auth
-     * Returns a 401 Unauthorized
+     * Returns a 401 Unauthorized.
      *
      * @return void
      */
@@ -99,7 +99,7 @@ class ProjectTest extends TestCase
     }
 
     /**
-     * Test for deleting a project
+     * Test for deleting a project.
      *
      * @return void
      */
@@ -123,7 +123,7 @@ class ProjectTest extends TestCase
 
     /**
      * Test for commenting without Auth
-     * Don't see comment input for comments
+     * Don't see comment input for comments.
      *
      * @return void
      */
@@ -136,7 +136,7 @@ class ProjectTest extends TestCase
     }
 
     /**
-     * Test to see comments section when logged in
+     * Test to see comments section when logged in.
      *
      * @return void
      */
@@ -150,7 +150,7 @@ class ProjectTest extends TestCase
     }
 
     /**
-     * Test for commenting on project
+     * Test for commenting on project.
      *
      * @return void
      */
@@ -177,7 +177,7 @@ class ProjectTest extends TestCase
 
     /**
      * Test for Favoriting a project without auth
-     * User should receive a 401 Unauthorized
+     * User should receive a 401 Unauthorized.
      *
      * @return void
      */
@@ -191,7 +191,7 @@ class ProjectTest extends TestCase
     }
 
     /**
-     * Test for favoriting a project
+     * Test for favoriting a project.
      *
      * @return void
      */

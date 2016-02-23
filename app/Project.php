@@ -17,7 +17,7 @@ class Project extends Model
     ];
 
     /**
-     * Project Owner realtionship
+     * Project Owner realtionship.
      */
     public function user()
     {
@@ -25,7 +25,7 @@ class Project extends Model
     }
 
     /**
-     * Project has many comments relationship
+     * Project has many comments relationship.
      */
     public function comments()
     {
@@ -33,7 +33,7 @@ class Project extends Model
     }
 
     /**
-     * Project has many favorites relationship
+     * Project has many favorites relationship.
      */
     public function favorites()
     {
@@ -41,7 +41,8 @@ class Project extends Model
     }
 
     /**
-     * Checkk if logged in user has favorited this project
+     * Checkk if logged in user has favorited this project.
+     *
      * @return bool true or false based on the favorite status
      */
     public function checkFavorite()
