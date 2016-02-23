@@ -25,6 +25,11 @@ class ProjectTest extends TestCase
         ->seeInDatabase('projects', ['url' => 'fRh_vgS2dFE']);
     }
 
+    /**
+     * Test for viewing correct project when clicked on
+     *
+     * @return void
+     */
     public function testViewCorrectProject()
     {
         $project = factory(Learn\Project::class)->create();
@@ -35,12 +40,23 @@ class ProjectTest extends TestCase
         ->see($project->title);
     }
 
+    /**
+     * Test for viewing edit without auth
+     * User is redirected to login
+     *
+     * @return void
+     */
     public function testVisitEditWithoutAuth()
     {
         $this->visit('/projects/1/edit')
         ->seePageIs('/login');
     }
 
+    /**
+     * Test for editing a project
+     *
+     * @return void
+     */
     public function testEditProject()
     {
         $title = 'This is a test title';
@@ -65,6 +81,12 @@ class ProjectTest extends TestCase
         $this->seeInDatabase('projects', ['title' => $title, 'description' => $description]);
     }
 
+    /**
+     * Test for deleting a project without auth
+     * Returns a 401 Unauthorized
+     *
+     * @return void
+     */
     public function testDeleteProjectWithoutAuth()
     {
         $project = factory(Learn\Project::class)->create();
@@ -76,6 +98,11 @@ class ProjectTest extends TestCase
         $this->assertEquals(401, $response->status());
     }
 
+    /**
+     * Test for deleting a project
+     *
+     * @return void
+     */
     public function testDeleteProject()
     {
         $project = factory(Learn\Project::class)->create();
@@ -94,6 +121,12 @@ class ProjectTest extends TestCase
             ->dontSeeInDatabase('projects', ['title' => $project->title]);
     }
 
+    /**
+     * Test for commenting without Auth
+     * Don't see comment input for comments
+     *
+     * @return void
+     */
     public function testCommentWithoutAuth()
     {
         $project = factory(Learn\Project::class)->create();
@@ -102,6 +135,11 @@ class ProjectTest extends TestCase
             ->dontSee('Add your comment');
     }
 
+    /**
+     * Test to see comments section when logged in
+     *
+     * @return void
+     */
     public function testSeeCommentOnProjectWhenLoggedIn()
     {
         $project = factory(Learn\Project::class)->create();
@@ -111,6 +149,11 @@ class ProjectTest extends TestCase
             ->see('Add your comment');
     }
 
+    /**
+     * Test for commenting on project
+     *
+     * @return void
+     */
     public function testCommentOnProject()
     {
         $project = factory(Learn\Project::class)->create();
@@ -132,6 +175,12 @@ class ProjectTest extends TestCase
             ->see($comment);
     }
 
+    /**
+     * Test for Favoriting a project without auth
+     * User should receive a 401 Unauthorized
+     *
+     * @return void
+     */
     public function testFavoriteWithoutAuth()
     {
         $response = $this->call(
@@ -141,6 +190,11 @@ class ProjectTest extends TestCase
         $this->assertEquals(401, $response->status());
     }
 
+    /**
+     * Test for favoriting a project
+     *
+     * @return void
+     */
     public function testFavoriteAProject()
     {
         $project = factory(Learn\Project::class)->create();
