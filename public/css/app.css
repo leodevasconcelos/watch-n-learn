@@ -1,4 +1,4 @@
-/* Custom Stylesheet */
+/* Custom Stylesheet *
 /**
  * Use this file to override Materialize files so you can update
  * the core Materialize files in the future
@@ -21,7 +21,11 @@ nav .brand-logo {
 
 .learn-nav {
   font-weight: 100;
-  padding: 0 10px 10px 10px; }
+  padding: 0 10px 10px 10px;
+  color: #fff; }
+
+.learn-nav a {
+  color: #fff; }
 
 .content {
   margin-top: 30px; }
@@ -49,11 +53,15 @@ nav .brand-logo {
 .mirg {
   margin-left: 5px; }
 
+.project a {
+  color: #263238; }
+
 .theatre {
-  background-color: #000000;
-  height: 480px;
+  background-color: #263238;
+  height: 500px;
   width: 100vw;
-  margin-top: -10px; }
+  padding-top: 10px;
+  padding-bottom: 10px; }
 
 .player {
   display: table;
@@ -76,7 +84,8 @@ footer {
   height: 100px;
   min-width: 100%;
   position: absolute;
-  bottom: 0; }
+  bottom: 0;
+  color: white; }
 
 .facebook-blue {
   color: #3B5998; }
@@ -124,5 +133,39 @@ p {
 
 footer.page-footer {
   margin: 0; }
+
+/* label color */
+.input-field label {
+  color: #263238; }
+
+/* label focus color */
+.input-field input[type=text]:focus + label {
+  color: #263238; }
+
+/* label underline focus color */
+.input-field input[type=text]:focus {
+  border-bottom: 1px solid #263238;
+  box-shadow: 0 1px 0 0 #263238; }
+
+/* valid color */
+.input-field input[type=text].valid {
+  border-bottom: 1px solid #263238;
+  box-shadow: 0 1px 0 0 #263238; }
+
+/* invalid color */
+.input-field input[type=text].invalid {
+  border-bottom: 1px solid #263238;
+  box-shadow: 0 1px 0 0 #263238; }
+
+/* icon prefix focus color */
+.input-field .prefix.active {
+  color: #263238; }
+
+.pagination li.active {
+  background-color: #263238;
+  color: white; }
+
+blockquote {
+  border-left: 5px solid #263238; }
 
 /*# sourceMappingURL=app.css.map */

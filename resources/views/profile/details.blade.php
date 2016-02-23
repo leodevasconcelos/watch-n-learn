@@ -7,7 +7,7 @@
             {!! csrf_field() !!}
             <input type="file" name="image" id="image" style="display:none;">
         </form>
-    <a href="#" id="changeProfPic">Change you profile pic</a>
+    <a href="#" id="changeProfPic">Change your profile pic</a>
     @endif
     @endif
   </div>

@@ -38,7 +38,7 @@
                     </div>
                </div>
             <div class="row">
-                <button type="submit" name="Upload" class="waves-effect waves-light btn col s2 offset-s10">Upload</a>
+                <button type="submit" name="Upload" class="waves-effect waves-light blue-grey darken-4 btn col s2 offset-s10">Upload</a>
             </div>
         </form>
     </div>
