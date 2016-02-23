@@ -24,16 +24,27 @@ class User extends Authenticatable
         'password', 'remember_token',
     ];
 
+    /**
+     * User has many projects relationship.
+     */
     public function projects()
     {
         return $this->hasMany('Learn\Project');
     }
 
+    /**
+     * User has many favorites relationship.
+     */
     public function favorites()
     {
         return $this->hasMany('Learn\Favorite');
     }
 
+    /**
+     * Get users's favorited projects.
+     *
+     * @return Collection of projects the user has favorited
+     */
     public function favoriteProjects()
     {
         $fevs = $this->favorites()->get();
@@ -66,6 +77,11 @@ class User extends Authenticatable
         return (!is_null($this->avatar)) ? $this->avatar : $this->getAvatarFromGravatar();
     }
 
+    /**
+     * Update avatar of the user.
+     *
+     * return void
+     */
     public function updateAvatar($url)
     {
         $this->avatar = $url;

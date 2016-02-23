@@ -9,6 +9,9 @@ use Learn\User;
 
 class ProfileController extends Controller
 {
+    /**
+     * Return user dashboard.
+     */
     public function index()
     {
         $user = Auth::user();
@@ -18,6 +21,9 @@ class ProfileController extends Controller
         return view('profile.index', compact('user', 'projects', 'favorites'));
     }
 
+    /**
+     * Update user details.
+     */
     public function update(Request $request)
     {
         $this->validate($request, [
@@ -32,6 +38,9 @@ class ProfileController extends Controller
         return redirect('dashboard');
     }
 
+    /**
+     * Update user avatar.
+     */
     public function updatePic(Request $request)
     {
         if ($request->hasFile('image')) {
@@ -42,6 +51,9 @@ class ProfileController extends Controller
         return redirect('/settings');
     }
 
+    /**
+     * Return profile settings page.
+     */
     public function edit()
     {
         $user = Auth::user();
@@ -51,12 +63,16 @@ class ProfileController extends Controller
         return view('profile.settings', compact('user', 'projects', 'favorites'));
     }
 
+    /**
+     * Show a particular user profile.
+     */
     public function show($id)
     {
         $user = User::find($id);
         $projects = $user->projects()->latest()->paginate(9);
         $favorites = $user->favoriteProjects();
 
+        // Rerturn dashboard if a user is viewing his own profile.
         if (Auth::user()->id == $user->id) {
             return view('profile.index', compact('user', 'projects', 'favorites'));
         }

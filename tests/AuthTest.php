@@ -27,6 +27,8 @@ class AuthTest extends TestCase
 
     /**
      * Test Login a new user.
+     *
+     * @return void
      */
     public function testLoginUser()
     {

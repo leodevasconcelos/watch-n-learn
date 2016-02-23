@@ -7,9 +7,7 @@ use Learn\Project;
 class HomeController extends Controller
 {
     /**
-     * Show the application dashboard.
-     *
-     * @return \Illuminate\Http\Response
+     * Show the application landing page.
      */
     public function index()
     {
