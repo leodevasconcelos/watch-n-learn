@@ -7,7 +7,7 @@
         <img src="/images/desk.jpeg"> <!-- random image -->
         <div class="caption center-align">
           <h3 class="white-text">Watch n Learn Anything!</h3>
-         <a class="btn btn-large blue-grey darken-4" href="{{ url('/register') }}">Get Started</a>
+         <a class="btn btn-large blue-grey darken-4" href="{{ url('/auth/register') }}">Get Started</a>
         </div>
       </li>
 

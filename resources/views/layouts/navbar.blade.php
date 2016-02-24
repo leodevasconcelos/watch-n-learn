@@ -1,4 +1,4 @@
-<ul id="authdropdown" class="dropdown-content">
+<ul id="authdropdown" class="dropdown-content darken-4 learn-nav">
     <li><a href="{{ url('/dashboard') }}">Dashboard</a></li>
     <li class="divider"></li>
     <li><a href="{{ url('/settings') }}">Settings</a></li>
