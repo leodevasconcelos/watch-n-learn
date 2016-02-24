@@ -1,11 +1,6 @@
 $(document).ready(function () {
   $(".dropdown-button").dropdown()
   $(".button-collapse").sideNav()
-  $(document).ready(function(){
-      $('.slider').slider({
-        full_width: true,
-        indicators: false});
-    });
   $('select').material_select()
   $('.parallax').parallax()
   $('.materialboxed').materialbox()
@@ -34,7 +29,11 @@ $(document).ready(function () {
         html += '<p>' + res.comment.comment + '</p>'
         html += '</div>'
 
-        $(html).appendTo('#comments')
+        var h = $('#comments').html();
+        h += html;
+        $('.collapsible-body').toggle();
+        $('#comments').html(h);
+        $('.collapsible-body').toggle();
         var comments = $('#commentCount').html()
         var comments = Number(comments) + 1
         $('#commentCount').html(comments)

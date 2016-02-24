@@ -3,6 +3,7 @@
 namespace Learn\Providers;
 
 use Illuminate\Support\ServiceProvider;
+use Validator;
 
 class AppServiceProvider extends ServiceProvider
 {
@@ -13,7 +14,9 @@ class AppServiceProvider extends ServiceProvider
      */
     public function boot()
     {
-        //
+        Validator::extend('youtube', function ($attribute, $value, $parameters, $validator) {
+            return [$value] == preg_grep("%^(?:https?:\/\/)?(?:www\.)?(?:youtube\.com|youtu\.be)\/watch\?v=([^&]+)%", [$value]);
+        }, 'Invalid youtube video url');
     }
 
     /**
