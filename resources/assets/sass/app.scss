@@ -24,6 +24,10 @@ body {
     background-color: #eceff1;
 }
 
+.card {
+    cursor: pointer;
+}
+
 nav ul a,
 nav .brand-logo {
     color: #444;
@@ -204,7 +208,13 @@ footer.page-footer {
     color: $theme-color;
 }
 
+.side-nav {
+    background-color: $theme-color;
+}
 
+.dropdown-content {
+    background-color: $theme-color;
+}
 /* label focus color */
 
 .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label  {

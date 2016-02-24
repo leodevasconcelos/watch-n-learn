@@ -69,4 +69,9 @@ $(document).ready(function () {
   $('#image').change(function() {
     $('#profileImageForm').submit();
   });
+
+  $('.card').click(function() {
+    var id = $(this).attr('data-id')
+    window.location = '/projects/' + id;
+  })
 })

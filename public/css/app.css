@@ -13,6 +13,9 @@ body {
   margin-bottom: 100px;
   background-color: #eceff1; }
 
+.card {
+  cursor: pointer; }
+
 nav ul a,
 nav .brand-logo {
   color: #444; }
@@ -153,6 +156,12 @@ footer.page-footer {
 /* label color */
 .input-field label {
   color: #263238; }
+
+.side-nav {
+  background-color: #263238; }
+
+.dropdown-content {
+  background-color: #263238; }
 
 /* label focus color */
 .input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
