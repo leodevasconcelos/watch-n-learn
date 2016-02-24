@@ -11,8 +11,14 @@ $(document).ready(function () {
   $('.materialboxed').materialbox()
   $('#comment').keypress(function (key) {
     if (key.keyCode === 13) {
+      var comment = $(this).val();
+
+      if (comment.trim() == '') {
+        return;
+      }
+
       var data = {
-        comment: $(this).val(),
+        comment: comment,
         _token: $('#_token').val(),
         project_id: $(this).attr('data-id')
       }
@@ -21,18 +27,14 @@ $(document).ready(function () {
 
       $.post('/projects/comment', data, function (res) {
         var html = ''
-        html += '<div class="comment-view z-depth-1">'
-        html += '<div class="row">'
-        html += '<span class="col s10">'
-        html += '<h5><a href="/profile/' + res.user.id
-        html += '">' + res.user.name + '</a></h5></span>'
-        html += '<span class="col s2">'
-        html += res.comment.time + '</span>'
-        html += '</div>'
+        html += '<div class="collapsible-body">'
+        html += '<span class="right">' + res.comment.time + '</span>'
+        html += '<span class="flow-text">'
+        html += '<a href="/profile/' + res.user.id + '">' + res.user.name + '</a></span>'
         html += '<p>' + res.comment.comment + '</p>'
         html += '</div>'
 
-        $('.comments-list').append(html)
+        $(html).appendTo('#comments')
         var comments = $('#commentCount').html()
         var comments = Number(comments) + 1
         $('#commentCount').html(comments)

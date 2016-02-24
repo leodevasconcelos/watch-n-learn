@@ -10,7 +10,8 @@ html {
   min-height: 100%; }
 
 body {
-  margin-bottom: 100px; }
+  margin-bottom: 100px;
+  background-color: #eceff1; }
 
 nav ul a,
 nav .brand-logo {
@@ -29,6 +30,16 @@ nav .brand-logo {
 
 .content {
   margin-top: 30px; }
+
+.collapsible-body {
+  padding: 1rem; }
+
+.collapsible-body p {
+  padding-top: 0.5rem;
+  padding-bottom: 0.5rem; }
+
+.collapsible-body span {
+  padding: 2rem; }
 
 .profile-image {
   max-width: 200px;
@@ -68,8 +79,8 @@ nav .brand-logo {
   margin: 0 auto; }
 
 .comment-view {
-  padding: 10px;
-  margin-bottom: 10px; }
+  padding: 5px;
+  margin-bottom: 5px; }
 
 .fav {
   color: red; }
@@ -77,8 +88,11 @@ nav .brand-logo {
 .unfav {
   color: grey; }
 
+.comments {
+  background-color: #fff; }
+
 .comment {
-  margin-top: 20px; }
+  margin-top: 5px; }
 
 footer {
   height: 100px;
