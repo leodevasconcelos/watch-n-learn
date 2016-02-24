@@ -7,8 +7,8 @@
         <ul class="tabs blue-grey darken-4">
           <li class="tab col s3"><a href="#projects" class="white-text">Projects</a></li>
           <li class="tab col s3"><a href="#favorites" class="white-text">Favorites</a></li>
-          <li class="tab col s3"><a href="#upload" class="white-text">Upload New Project</a></li>
-          <li class="tab col s3"><a href="#settings" class="active white-text">Profile Settings</a></li>
+          <li class="tab col s3"><a href="#upload" class="white-text">Upload</a></li>
+          <li class="tab col s3"><a href="#settings" class="active white-text">Profile</a></li>
         </ul>
       </div>
       @include('profile.tabcontent')
