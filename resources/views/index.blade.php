@@ -7,7 +7,11 @@
         <img src="/images/desk.jpeg"> <!-- random image -->
         <div class="caption center-align">
           <h3 class="white-text">Watch n Learn Anything!</h3>
-         <a class="btn btn-large blue-grey darken-4" href="{{ url('/auth/register') }}">Get Started</a>
+         @if(Auth::guest())
+            <a class="btn btn-large blue-grey darken-4" href="{{ url('/auth/register') }}">Get Started</a>
+        @else
+            <h5 class="light grey-text text-lighten-3">Go to your dashboard to add videos.</h5>
+        @endif
         </div>
       </li>
       <li>
@@ -21,7 +25,11 @@
         <img src="/images/desk5.jpeg"> <!-- random image -->
         <div class="caption right-align">
           <h3>Get organised as you learn</h3>
-          <h5 class="light grey-text text-lighten-3">Create an account, add and favorite vidoes.</h5>
+          @if (Auth::guest())
+          <h5 class="light grey-text text-lighten-3">Create an account to add n favorite vidoes.</h5>
+          @else
+          <h5 class="light grey-text text-lighten-3">Favorite videos when you view them.</h5>
+          @endif
         </div>
       </li>
 
