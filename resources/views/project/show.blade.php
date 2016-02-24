@@ -25,14 +25,14 @@
             </div>
             <div>
                 <ul class="collapsible z-depth-1 comments" data-collapsible="accordion">
-                    <li>
-                        <div id="comments" class="collapsible-header"><i class="material-icons">comment</i>Comments</div>
+                    <li id="comments">
+                        <div class="collapsible-header"><i class="material-icons">comment</i>Comments</div>
                         @foreach($comments as $comment)
                               <div class="collapsible-body">
                               <span class="right">{{ $comment->created_at->diffForHumans()}}</span>
                                 <span class="flow-text"><a href="{{ url('/profile/'.$comment->user->id) }}">{{ $comment->user->name }}</a></span>
                                 <p>{{ $comment->comment }}</p>
-                              </div>
+                                </div>
                         @endforeach
                     </li>
                 </ul>
