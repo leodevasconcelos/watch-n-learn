@@ -2,7 +2,13 @@ $(document).ready(function () {
   $(".dropdown-button").dropdown()
   $(".button-collapse").sideNav()
   $('select').material_select()
-  $('.parallax').parallax()
+  $(document).ready(function(){
+      $('.slider').slider({
+        full_width: true,
+        indicators: false,
+        interval: 5000
+        });
+    });
   $('.materialboxed').materialbox()
   $('#comment').keypress(function (key) {
     if (key.keyCode === 13) {

@@ -10,6 +10,20 @@
          <a class="btn btn-large blue-grey darken-4" href="{{ url('/auth/register') }}">Get Started</a>
         </div>
       </li>
+      <li>
+        <img src="/images/desk3.jpeg"> <!-- random image -->
+        <div class="caption left-align">
+          <h3>Browse through technical resources</h3>
+          <h5 class="light grey-text text-lighten-3">Find exaclty what you want to learn</h5>
+        </div>
+      </li>
+      <li>
+        <img src="/images/desk5.jpeg"> <!-- random image -->
+        <div class="caption right-align">
+          <h3>Get organised as you learn</h3>
+          <h5 class="light grey-text text-lighten-3">Create an account, add and favorite vidoes.</h5>
+        </div>
+      </li>
 
     </ul>
   </div>
