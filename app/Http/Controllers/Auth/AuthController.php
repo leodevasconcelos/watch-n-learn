@@ -117,12 +117,6 @@ class AuthController extends Controller
             return $authUser;
         }
 
-        $authUser = User::where('email', $user->email)->first();
-
-        if ($authUser) {
-            return $authUser;
-        }
-
         return User::create([
             'name'     => $user->name,
             'username' => $user->nickname,
