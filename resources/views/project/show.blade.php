@@ -24,7 +24,7 @@
                 @endif
             </div>
             <div>
-                <ul class="collapsible z-depth-1 comments" data-collapsible="accordion">
+                <ul class="collapsible z-depth-0 comments" data-collapsible="accordion">
                     <li id="comments">
                         <div class="collapsible-header"><i class="material-icons">comment</i>Comments</div>
                         @foreach($comments as $comment)

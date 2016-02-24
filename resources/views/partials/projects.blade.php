@@ -1,8 +1,6 @@
 <div id="projects" class="col s12">
     <div class="tab-content">
-        @if($projects->count() > 0)
-        <h3 class="flow-text">Your Projects</h3>
-        @else
+        @if($projects->count() == 0)
         <h3 class="flow-text">No projects uploaded yet.</h3>
         @endif
         <div class="row section">
