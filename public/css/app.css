@@ -58,8 +58,7 @@ nav .brand-logo {
   margin-top: 30px; }
 
 .center {
-  margin: 0 auto;
-  width: 30%; }
+  margin: 0 auto; }
 
 .mirg {
   margin-left: 5px; }
@@ -148,26 +147,29 @@ p {
 footer.page-footer {
   margin: 0; }
 
+.forms {
+  max-width: 500px; }
+
 /* label color */
 .input-field label {
   color: #263238; }
 
 /* label focus color */
-.input-field input[type=text]:focus + label {
+.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label {
   color: #263238; }
 
 /* label underline focus color */
-.input-field input[type=text]:focus {
+.input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus {
   border-bottom: 1px solid #263238;
   box-shadow: 0 1px 0 0 #263238; }
 
 /* valid color */
-.input-field input[type=text].valid {
+.input-field input[type=text].valid, .input-field input[type=email].valid, .input-field input[type=password].valid {
   border-bottom: 1px solid #263238;
   box-shadow: 0 1px 0 0 #263238; }
 
 /* invalid color */
-.input-field input[type=text].invalid {
+.input-field input[type=text].invalid, .input-field input[type=email].invalid, .input-field input[type=password].invalid {
   border-bottom: 1px solid #263238;
   box-shadow: 0 1px 0 0 #263238; }
 
