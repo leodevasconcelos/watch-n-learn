@@ -1,8 +1,6 @@
 <div id="favorites" class="col s12">
     <div class="tab-content">
-        @if($favorites->count() > 0)
-        <h3 class="flow-text">Your Favorites</h3>
-        @else
+        @if($favorites->count() == 0)
         <h3 class="flow-text">No favorites made yet.</h3>
         @endif
         <div class="row section">
