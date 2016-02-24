@@ -2,9 +2,9 @@
 
 <!-- Main Content -->
 @section('content')
-    <div class="center">
+        <div class="center">
         <h2>Forgot Password</h2>
-        <div class="row">
+        <div class="row forms">
             <form class="col s12" role="form" method="POST" action="{{ url('/login') }}">
                 {!! csrf_field() !!}
                 <div class="row">
@@ -14,11 +14,12 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Send Password Reset Link
+                    <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Send Password Reset Link
                         <i class="material-icons right">send</i>
                     </button>
                 </div>
             </form>
         </div>
     </div>
+
 @endsection

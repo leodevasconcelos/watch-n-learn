@@ -1,10 +1,10 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="center">
-        <h2>Login</h2>
+        <div class="center">
+        <div class="row forms z-depth-1">
+         <h2>Login</h2>
         @include('partials.validation')
-        <div class="row">
             <form class="col s12" role="form" method="POST" action="{{ url('/login') }}">
                 {!! csrf_field() !!}
                 <div class="row">
@@ -20,10 +20,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button class="btn waves-effect waves-light" type="submit" name="action">Login
+                    <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="action">Login
                         <i class="material-icons right">send</i>
                     </button>
-                    <a href="{{ url('/password/reset') }}">&nbsp;&nbsp;Forgot Your Password?</a>
                 </div>
                 <div class="row">Or login with</div>
                 @include('partials.oauth')

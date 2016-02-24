@@ -1,10 +1,11 @@
 @extends('layouts.master')
 
 @section('content')
-    <div class="center">
-        <h2>Register</h2>
-        @include('partials.validation')
-        <div class="row">
+        <div class="center">
+        <div class="row forms z-depth-1">
+            <h2>Register</h2>
+            @include('partials.validation')
+
             <form class="col s12" role="form" method="POST" action="{{ url('/register') }}">
                 {!! csrf_field() !!}
                 <div class="row">
@@ -38,9 +39,9 @@
                     </div>
                 </div>
                 <div class="row">
-                    <button class="btn waves-effect waves-light" type="submit" name="register">Register
+                    <button class="btn waves-effect waves-light blue-grey darken-4" type="submit" name="register">Register
                         <i class="material-icons right">send</i>
-                    </button>
+                    </button><br/>
                     <a href="{{ url('/login') }}">&nbsp;&nbsp;Already have an account? Login</a>
                 </div>
                 <div class="row">Or register with</div>

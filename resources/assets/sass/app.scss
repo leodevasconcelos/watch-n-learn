@@ -81,7 +81,6 @@ nav .brand-logo {
 
 .center {
     margin: 0 auto;
-    width: 30%;
 }
 
 .mirg {
@@ -164,7 +163,6 @@ p {
     height: auto;
     color: rgba(255, 255, 255, .9);
 }
-
 .parallax-container .section {
     width: 100%;
 }
@@ -197,7 +195,9 @@ footer.page-footer {
     margin: 0;
 }
 
-
+.forms {
+    max-width: 500px;
+}
 /* label color */
 
 .input-field label {
@@ -207,14 +207,13 @@ footer.page-footer {
 
 /* label focus color */
 
-.input-field input[type=text]:focus + label {
+.input-field input[type=text]:focus + label, .input-field input[type=email]:focus + label, .input-field input[type=password]:focus + label  {
     color: $theme-color;
 }
 
-
 /* label underline focus color */
 
-.input-field input[type=text]:focus {
+.input-field input[type=text]:focus, .input-field input[type=email]:focus, .input-field input[type=password]:focus {
     border-bottom: 1px solid $theme-color;
     box-shadow: 0 1px 0 0 $theme-color;
 }
@@ -222,7 +221,7 @@ footer.page-footer {
 
 /* valid color */
 
-.input-field input[type=text].valid {
+.input-field input[type=text].valid, .input-field input[type=email].valid, .input-field input[type=password].valid {
     border-bottom: 1px solid $theme-color;
     box-shadow: 0 1px 0 0 $theme-color;
 }
@@ -230,7 +229,7 @@ footer.page-footer {
 
 /* invalid color */
 
-.input-field input[type=text].invalid {
+.input-field input[type=text].invalid, .input-field input[type=email].invalid, .input-field input[type=password].invalid {
     border-bottom: 1px solid $theme-color;
     box-shadow: 0 1px 0 0 $theme-color;
 }
