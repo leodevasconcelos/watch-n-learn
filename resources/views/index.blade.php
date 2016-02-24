@@ -19,12 +19,19 @@
             <div class="divider"></div>
             <div class="row">
             @foreach($projects as $project)
-                <div class="col l3 m4 s6">
-                    <div class="project section">
-                        <a href="{{ url('projects/'.$project->id) }}"><img width="225" height="127" src="http://img.youtube.com/vi/{{ $project->url }}/0.jpg"></a>
-                        <h6 class="flow-text"><a href="{{ url('projects/'.$project->id) }}"> {{$project->title}} </a></h6>
-                    </div>
-                </div>
+                <div class="col l3 m6 s12">
+                    <div class="card small" data-id="{{ $project->id }}">
+                        <div class="card-image">
+                          <img src="http://img.youtube.com/vi/{{ $project->url }}/0.jpg">                        </div>
+                        <div class="card-content">
+                          <p class="flow-text">{{ $project->title}}</p>
+                        </div>
+                        <div class="card-action right">
+                          {{ $project->favorites()->count() }} <i class="fa fa-heart"></i>
+                          {{ $project->comments()->count() }} <i class="fa fa-comment"></i>
+                        </div>
+                      </div>
+                                    </div>
             @endforeach
             </div>
             <div class="center">{!! $projects->links() !!}</div>
