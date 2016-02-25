@@ -8,7 +8,7 @@
         <div class="caption center-align">
           <h3 class="white-text">Watch n Learn Anything!</h3>
          @if(Auth::guest())
-            <a class="btn btn-large blue-grey darken-4" href="{{ url('/auth/register') }}">Get Started</a>
+            <a class="btn btn-large blue-grey darken-4" href="{{ url('/register') }}">Get Started</a>
         @else
             <h5 class="light grey-text text-lighten-3">Go to your dashboard to add videos.</h5>
         @endif

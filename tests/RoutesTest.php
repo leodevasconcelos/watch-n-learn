@@ -49,4 +49,11 @@ class RoutesTest extends TestCase
         $this->visit('/dashboard')
             ->seePageIs('/login');
     }
+
+    public function testGettingStarted()
+    {
+        $this->visit('/')
+            ->click('Get Started')
+            ->seePageIs('/register');
+    }
 }
