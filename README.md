@@ -8,8 +8,38 @@ A Learning Management System that helps people learn various technologies throug
 
 To see the live version, head over to [Watch n Learn](https://watch-n-learn-staging.herokuapp.com/).
 
+### Features
+##### 1. Create an account
+You can create an account, either through a registration form, or use OAuth:- either twitter, facebook or github. This allows you to have a dashboard.
+
+##### 2. Upload, edit and delete the videos
+Once you have an account, then head over to your dashboard under the upload section and upload videos. Only valid youtube urls are allowed, so don't poke the bear.
+
+You are also able to edit, and delete videos that you have uploaded.
+
+##### 3. View videos other users have uploaded
+When you go to the landing page of the aplication, a list of videos uploaded by other users is listed. You can scroll through to see the various videos you might be interested in.
+
+##### 4. Favorite videos you find interesting
+Clicking on a video, takes you to it's page. There you can favorite a video by clicking on :heart:. Favoriting videos places them in your favorites section of your dashboard. (Accessible at the top right of the application).
+
+##### 5. Comment on videos
+You can comment on videos that you are watching, and consequently have a review or discussion with others who have also watched the video.
+
+##### 6. View other people's profiles.
+You can alse view other people's profiles, and browse through the videos they have uploaded and favorited. This is accessible on video pages, where the owner of the video is placed just beside the title. User profiles are also accessible through the video comments., by clicking on their names.
+
+
+### Technologies used
+1. [Laravel 5.2](https://laravel.com/)
+2. [Materialize CSS](http://materializecss.com/)
+3. [Postgres SQL](http://www.postgresql.org/)
+
+A list of open source laravel packages used can be see in the [composer.json](https://github.com/andela-cganga/watch-n-learn/blob/staging/composer.json).
+
+
 ### Set up Locally
-Make sure you have the requirements for laravel setup. If not, [Laravel Installation Guide](https://laravel.com/docs/5.2)
+Make sure you have the requirements for laravel setup. If not, read the [Laravel Installation Guide](https://laravel.com/docs/5.2)
 
 Clone this repo
 ```bash
