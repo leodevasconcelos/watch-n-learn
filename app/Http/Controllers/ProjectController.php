@@ -131,8 +131,11 @@ class ProjectController extends Controller
             'title'       => 'required|max:255',
             'description' => 'required|max:255',
             'category'    => 'required',
-            'url'         => 'required',
+            'url'         => 'required|youtube',
         ]);
+
+        $url = explode('=', $request->input('url'));
+        $request->url = end($url);
 
         $project = Project::find($id)->update($request->all());
 
