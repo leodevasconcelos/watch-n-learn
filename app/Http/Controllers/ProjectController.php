@@ -135,7 +135,7 @@ class ProjectController extends Controller
         ]);
 
         $url = explode('=', $request->input('url'));
-        $request->url = end($url);
+        $request['url'] = end($url);
 
         $project = Project::find($id)->update($request->all());
 
