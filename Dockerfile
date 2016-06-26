@@ -19,4 +19,4 @@ CMD composer install
 EXPOSE 8000
 
 # Run the app
-CMD php -S 127.0.0.1:8000
+CMD php artisan serve --host=0.0.0.0 --port=8000
