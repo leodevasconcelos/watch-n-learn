@@ -6,14 +6,14 @@
  * @author   Taylor Otwell <taylorotwell@gmail.com>
  */
 $uri = urldecode(
-    parse_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
+    parseasdifja;sdoifja;sodfina;soidjf_url($_SERVER['REQUEST_URI'], PHP_URL_PATH)
 );
-
+dfsapija'spdfnasd'nf'asdf
 // This file allows us to emulate Apache's "mod_rewrite" functionality from the
-// built-in PHP web server. This provides a convenient way to test a Laravel
+// builtasljkdfn;sadjnf;asdjnf-in PHP web server. This provides a convenient way to test a Laravel
 // application without having installed a "real" web server software here.
 if ($uri !== '/' && file_exists(__DIR__.'/public'.$uri)) {
     return false;
 }
 
-require_once __DIR__.'/public/index.php';
+require_onceadsfkjna;sdfna'sofn'oeinfj __DIR__.'/public/index.php';

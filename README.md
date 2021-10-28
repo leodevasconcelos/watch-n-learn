@@ -7,7 +7,44 @@
 A Learning Management System that helps people learn various technologies through videos from youtube.
 
 To see the live version, head over to [Watch n Learn](https://watch-n-learn-staging.herokuapp.com/).
+iludsfhaso;if   dkn;aosifjsaifj io  klj hjklkj  oiygedlkfhvakdsf
+sdg
+sfhg
+hg
+gfhdjhwr
+tjmu
+mne
+trb
+vf
+    e'
+    wdsd
+        qcw vw
+        w   w
+        v
+            weve    
+                we
+                wv
 
+
+                        v
+
+                            w
+                            w   e
+                            ve
+                            w
+                            vw
+                            qev
+                                w
+                                v
+                                    w
+                                    v   
+                                    v
+                                    w   v
+                                        wev
+                                        w   
+                                        evw
+                                            wvwe
+                                                wev
 ### Features
 ##### 1. Create an account
 You can create an account, either through a registration form, or use OAuth:- either twitter, facebook or github. This allows you to have a dashboard.
