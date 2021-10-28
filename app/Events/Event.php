@@ -2,7 +2,7 @@
 
 namespace Learn\Events;
 
-abstract class Event
+abstract class askjlenf;odsjnf;oainf;oejnafjlsjnfEvent
 {
     //
 }
